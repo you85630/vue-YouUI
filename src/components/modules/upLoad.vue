@@ -26,14 +26,14 @@ export default {
       function run (input, pic) {
         let file = input.files[0]
         let reader = new FileReader()
-        if (typeof (FileReader) !== 'undefined') {
+        if (typeof FileReader !== 'undefined') {
           reader.onload = function () {
             pic(this.result)
           }
           reader.readAsDataURL(file)
         }
       }
-      run(oFile, (data) => {
+      run(oFile, data => {
         // 插入预览图片
         this.imgData = data
         this.$emit('imgInput', data)
@@ -51,7 +51,7 @@ export default {
     this.isImg()
   },
   watch: {
-    '$route': 'isImg'
+    $route: 'isImg'
   }
 }
 </script>
@@ -60,8 +60,8 @@ export default {
 .up-load {
   position: relative;
   box-sizing: border-box;
-  width: 10vw;
-  height: 10vw;
+  width: 100px;
+  height: 100px;
   border: 1px solid #eee;
   background-color: #f5f5f5;
   text-align: center;
@@ -71,21 +71,21 @@ export default {
     }
   }
   p {
-    font-size: 1vw;
+    font-size: 14px;
   }
   i {
-    margin-top: 2vw;
-    margin-bottom: 1vw;
+    margin-top: 20px;
+    margin-bottom: 10px;
     color: #999;
-    font-size: 4vw;
+    font-size: 40px;
   }
   input {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 2;
-    width: 10vw;
-    height: 10vw;
+    width: 100px;
+    height: 100px;
     opacity: 0;
     cursor: pointer;
   }
@@ -95,8 +95,8 @@ export default {
   top: 0;
   left: 0;
   z-index: 1;
-  width: 10vw;
-  height: 10vw;
+  width: 100px;
+  height: 100px;
   background-color: #f5f5f5;
   text-align: center;
   img {
@@ -110,13 +110,13 @@ export default {
     bottom: 0;
     left: 0;
     display: none;
-    width: 10vw;
-    height: 10vw;
+    width: 100px;
+    height: 100px;
     background-color: rgba($color: #000000, $alpha: 0.4);
     color: #fff;
     cursor: pointer;
     p {
-      line-height: 10vw;
+      line-height: 100px;
     }
   }
 }

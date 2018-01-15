@@ -291,14 +291,14 @@ export default {
 }
 .date-show {
   box-sizing: border-box;
-  padding: 0.8vw 1vw;
+  padding: 1% 2%;
   border: 1px solid #eee;
   border-radius: 2px;
   input {
-    margin-left: 1vw;
-    width: 20vw;
+    margin-left: 10px;
     border: none;
-    font-size: 1vw;
+    width: 96%;
+    font-size: 14px;
   }
   i {
     font-size: 12px;
@@ -318,7 +318,7 @@ export default {
   &:before,
   &:after {
     position: absolute;
-    left: 4vw;
+    left: 160px;
     width: 0;
     height: 0;
     border-width: 0 12px 8px 12px;

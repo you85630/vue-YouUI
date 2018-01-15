@@ -1,6 +1,8 @@
 <template>
   <div class="login">
-    登录页
+    <div class="card">
+      <div class="title"><img src="" alt=""></div>
+    </div>
   </div>
 </template>
 

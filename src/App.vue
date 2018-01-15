@@ -7,5 +7,6 @@
 <style lang="scss" scoped>
 #app {
   height: 100%;
+  font-size: 0;
 }
 </style>

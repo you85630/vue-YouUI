@@ -1,5 +1,5 @@
 <template>
-  <div class="btn-input" :class="{open:btn}" @click="cutBtn(btn)">
+  <div class="switch" :class="{open:btn}" @click="cutBtn(btn)">
     <span></span>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn-input {
+.switch {
   position: relative;
   width: 40px;
   height: 20px;

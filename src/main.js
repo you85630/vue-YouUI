@@ -9,6 +9,8 @@ import store from './store'
 import 'assets/css/reset.css'
 // 引入动画样式
 import 'assets/css/animate.css'
+// 引入fontawesome
+import 'font-awesome/css/font-awesome.css'
 
 Vue.config.productionTip = false
 

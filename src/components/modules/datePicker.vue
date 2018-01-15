@@ -1,9 +1,9 @@
 <template>
-  <div class="time-input">
-    <div class="time-show">
+  <div class="date-picker">
+    <div class="date-show">
       <i class="fa fa-calendar"></i><input type="text" v-model="timeShow" @click="showTimeCard">
     </div>
-    <div class="time-card" v-if="timeCard">
+    <div class="date-card" v-if="timeCard">
       <div class="day-show" v-if="day">
         <div class="day-title">
           <button @click="getPrevYear">
@@ -286,10 +286,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.time-input {
+.date-picker {
   position: relative;
 }
-.time-show {
+.date-show {
   box-sizing: border-box;
   padding: 0.8vw 1vw;
   border: 1px solid #eee;
@@ -304,7 +304,7 @@ export default {
     font-size: 12px;
   }
 }
-.time-card {
+.date-card {
   position: absolute;
   z-index: 3;
   box-sizing: border-box;

@@ -5,6 +5,10 @@ Vue.use(Router)
 const login = () => import('views/login')
 const home = () => import('views/home')
 
+const Switch = () => import('components/psges/switch')
+const datePicker = () => import('components/psges/datePicker')
+const upLoad = () => import('components/psges/upLoad')
+
 const router = new Router({
   routes: [
     {
@@ -19,7 +23,24 @@ const router = new Router({
     {
       path: '/home',
       name: 'home',
-      component: home
+      component: home,
+      children: [
+        {
+          path: '/switch',
+          name: 'switch',
+          component: Switch
+        },
+        {
+          path: '/datePicker',
+          name: 'datePicker',
+          component: datePicker
+        },
+        {
+          path: '/upLoad',
+          name: 'upLoad',
+          component: upLoad
+        }
+      ]
     }
   ]
 })

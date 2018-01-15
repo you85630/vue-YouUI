@@ -1,5 +1,5 @@
 <template>
-  <div class="img-input">
+  <div class="up-load">
     <i class="fa fa-image"></i>
     <p>点击上传图片</p>
     <input type="file" id="input" @change="fileImg">
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.img-input {
+.up-load {
   position: relative;
   box-sizing: border-box;
   width: 10vw;

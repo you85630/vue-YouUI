@@ -36,6 +36,7 @@ export default {
   padding: 10px;
   box-sizing: border-box;
   background-color: #fff;
+  user-select: none;
   .li {
     padding: 10px 0;
     a {

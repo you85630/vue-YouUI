@@ -11,15 +11,15 @@ export default new Vuex.Store({
     leftNav: [
       {
         name: '开关',
-        linkto: '/switch'
+        linkto: '/home/switch'
       },
       {
         name: '日期选择器',
-        linkto: '/datePicker'
+        linkto: '/home/datePicker'
       },
       {
         name: '图片上传',
-        linkto: '/upload'
+        linkto: '/home/upload'
       }
     ]
   },

@@ -26,17 +26,17 @@ const router = new Router({
       component: home,
       children: [
         {
-          path: '/switch',
+          path: '/home/switch',
           name: 'switch',
           component: Switch
         },
         {
-          path: '/datePicker',
+          path: '/home/datePicker',
           name: 'datePicker',
           component: datePicker
         },
         {
-          path: '/upLoad',
+          path: '/home/upLoad',
           name: 'upLoad',
           component: upLoad
         }

@@ -14,9 +14,10 @@
 
 <script>
 export default {
+  props: ['imgVal'],
   data () {
     return {
-      imgData: ''
+      imgData: this.imgVal
     }
   },
   methods: {
@@ -35,7 +36,7 @@ export default {
       run(oFile, data => {
         // 插入预览图片
         this.imgData = data
-        this.$emit('imgInput', data)
+        this.$emit('input', this.imgData)
       })
     }
   }

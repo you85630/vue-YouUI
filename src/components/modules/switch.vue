@@ -15,7 +15,7 @@ export default {
   methods: {
     cutBtn () {
       this.btn = !this.btn
-      this.$emit('switch', this.btn)
+      this.$emit('input', this.btn)
     }
   }
 }

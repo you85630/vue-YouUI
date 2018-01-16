@@ -155,6 +155,7 @@ export default {
       this.timeCard = false
       this.nowTime.day = key + 1
       this.timeShow = this.nowTime.year + '-' + this.nowTime.month + '-' + this.nowTime.day
+      this.$emit('input', this.timeShow)
     },
     // 年份区间选择-前10年
     prevScreenYear () {

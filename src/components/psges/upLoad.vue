@@ -1,5 +1,5 @@
 <template>
-  <div class="up-load">
+  <div>
     <up-load v-model="pic"></up-load>
     <textarea :value="pic"></textarea>
   </div>
@@ -21,7 +21,9 @@ export default {
 
 <style lang="scss" scoped>
 textarea{
-  width: 200px;
+  width: 400px;
   height: 200px;
+  margin-top: 10px;
+  padding: 1%;
 }
 </style>

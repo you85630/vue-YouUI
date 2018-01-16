@@ -1,5 +1,5 @@
 <template>
-  <div class="date-picker">
+  <div>
     <date-picker v-model="time"></date-picker>
     <p>{{time}}</p>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="switch">
+  <div>
     <my-switch v-model="select"></my-switch>
     <p>{{select}}</p>
   </div>
@@ -20,9 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.switch{
   p{
     font-size: 14px;
   }
-}
 </style>

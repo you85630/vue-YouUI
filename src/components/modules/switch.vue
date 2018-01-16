@@ -1,6 +1,6 @@
 <template>
   <div class="switch" :class="{open:btn}" @click="cutBtn(btn)">
-    <span></span>
+<span></span>
   </div>
 </template>
 
@@ -21,14 +21,14 @@ export default {
 
 <style lang="scss" scoped>
 .switch {
-  display: inline-block;
   position: relative;
+  display: inline-block;
+  box-sizing: border-box;
   width: 40px;
   height: 20px;
-  background-color: #ff4949;
   border: 2px solid #ff4949;
-  box-sizing: border-box;
   border-radius: 50px;
+  background-color: #ff4949;
   cursor: pointer;
   span {
     position: absolute;
@@ -39,8 +39,8 @@ export default {
   }
 }
 .open {
-  background-color: #2d8cf0;
   border-color: #2d8cf0;
+  background-color: #2d8cf0;
   span {
     right: 0;
   }

@@ -22,8 +22,8 @@ export default new Vuex.Store({
         linkto: '/home/upload'
       },
       {
-        name: '单选框',
-        linkto: '/home/radio'
+        name: '多选框',
+        linkto: '/home/checkBox'
       }
     ]
   },

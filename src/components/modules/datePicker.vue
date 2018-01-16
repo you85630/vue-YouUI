@@ -34,7 +34,7 @@
         </dl>
         <dl>
           <dd class="none" v-for="li in prevMonth" :key="li.index">{{li}}</dd>
-          <dd v-for="(li,index) in nowMonth"  :key="li.index" :class="{active:index+1===nowTime.day}" @click="getDay(index)">{{li}}</dd>
+          <dd v-for="(li,index) in nowMonth" :key="li.index" :class="{active:index+1===nowTime.day}" @click="getDay(index)">{{li}}</dd>
           <dd class="none" v-for="li in nextMonth" :key="li.index">{{li}}</dd>
         </dl>
       </div>

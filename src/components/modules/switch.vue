@@ -1,19 +1,21 @@
 <template>
-  <div class="switch" :class="{open:btn}" @click="cutBtn(btn)">
-<span></span>
+  <div class="switch" :class="{open:btn}" @click="cutBtn">
+    <span></span>
   </div>
 </template>
 
 <script>
 export default {
+  props: ['value'],
   data () {
     return {
-      btn: false
+      btn: this.value
     }
   },
   methods: {
-    cutBtn (key) {
-      this.btn = !key
+    cutBtn () {
+      this.btn = !this.btn
+      this.$emit('switch', this.btn)
     }
   }
 }

@@ -3,29 +3,19 @@
     <div class="logo">
       <router-link to="/">UI组件库</router-link>
     </div>
-    <div class="li" v-for="li in leftNav">
+    <div class="li" v-for="li in leftNav" :key="li.index">
       <router-link :to="li.linkto">{{li.name}}</router-link>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  data () {
-    return {
-      leftNav: [
-        {
-          name: '开关',
-          linkto: '/switch'
-        }, {
-          name: '日期选择器',
-          linkto: '/datePicker'
-        }, {
-          name: '图片上传',
-          linkto: '/upload'
-        }
-      ]
-    }
+  computed: {
+    ...mapGetters([
+      'leftNav'
+    ])
   }
 }
 </script>

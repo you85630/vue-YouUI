@@ -7,8 +7,25 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 export default new Vuex.Store({
-  state: {},
-  getters: {},
+  state: {
+    leftNav: [
+      {
+        name: '开关',
+        linkto: '/switch'
+      },
+      {
+        name: '日期选择器',
+        linkto: '/datePicker'
+      },
+      {
+        name: '图片上传',
+        linkto: '/upload'
+      }
+    ]
+  },
+  getters: {
+    leftNav: (state) => state.leftNav
+  },
   actions: {},
   mutations: {}
 })

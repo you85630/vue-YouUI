@@ -14,7 +14,6 @@
 
 <script>
 export default {
-  props: ['imgVal'],
   data () {
     return {
       imgData: ''
@@ -38,20 +37,7 @@ export default {
         this.imgData = data
         this.$emit('imgInput', data)
       })
-    },
-    isImg () {
-      if (this.imgVal) {
-        this.imgData = this.imgVal
-      } else {
-        this.imgData = ''
-      }
     }
-  },
-  created () {
-    this.isImg()
-  },
-  watch: {
-    $route: 'isImg'
   }
 }
 </script>

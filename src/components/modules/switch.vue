@@ -1,9 +1,6 @@
 <template>
-  <div class="switch-box">
-    <div class="switch" :class="{open:btn}" @click="cutBtn(btn)">
-      <span></span>
-    </div>
-    <p>{{btn}}</p>
+  <div class="switch" :class="{open:btn}" @click="cutBtn(btn)">
+    <span></span>
   </div>
 </template>
 
@@ -23,14 +20,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.switch-box{
-  p{
-    font-size: 14px;
-    margin-left: 20px;
-    display: inline-block;
-    vertical-align: text-bottom;
-  }
-}
 .switch {
   display: inline-block;
   position: relative;

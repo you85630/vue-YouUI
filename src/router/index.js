@@ -8,6 +8,7 @@ const home = () => import('views/home')
 const Switch = () => import('components/psges/switch')
 const datePicker = () => import('components/psges/datePicker')
 const upLoad = () => import('components/psges/upLoad')
+const radio = () => import('components/psges/radio')
 
 const router = new Router({
   routes: [
@@ -39,6 +40,11 @@ const router = new Router({
           path: '/home/upLoad',
           name: 'upLoad',
           component: upLoad
+        },
+        {
+          path: '/home/radio',
+          name: 'radio',
+          component: radio
         }
       ]
     }

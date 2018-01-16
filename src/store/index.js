@@ -20,6 +20,10 @@ export default new Vuex.Store({
       {
         name: '图片上传',
         linkto: '/home/upload'
+      },
+      {
+        name: '单选框',
+        linkto: '/home/radio'
       }
     ]
   },

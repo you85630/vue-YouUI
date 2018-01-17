@@ -1,6 +1,7 @@
 <template>
   <div>
-    <check-box></check-box>
+    <check-box v-model="checkList"></check-box>
+    <p>{{checkList}}</p>
   </div>
 </template>
 
@@ -9,6 +10,22 @@ import checkBox from 'components/modules/checkBox'
 export default {
   components: {
     checkBox
+  },
+  data () {
+    return {
+      checkList: [
+        {
+          name: '备选1',
+          select: false
+        }, {
+          name: '备选2',
+          select: false
+        }, {
+          name: '备选3',
+          select: false
+        }
+      ]
+    }
   }
 }
 </script>

@@ -10,20 +10,10 @@
 
 <script>
 export default {
+  props: ['value'],
   data () {
     return {
-      checkList: [
-        {
-          name: '备选1',
-          select: false
-        }, {
-          name: '备选2',
-          select: false
-        }, {
-          name: '备选3',
-          select: false
-        }
-      ]
+      checkList: this.value
     }
   },
   methods: {

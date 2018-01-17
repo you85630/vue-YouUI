@@ -28,6 +28,14 @@ export default new Vuex.Store({
       {
         name: '图片上传',
         linkto: '/home/upload'
+      },
+      {
+        name: '标签页',
+        linkto: '/home/tabs'
+      },
+      {
+        name: '树形结构',
+        linkto: '/home/tree'
       }
     ]
   },

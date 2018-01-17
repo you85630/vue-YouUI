@@ -11,6 +11,8 @@ const upLoad = () => import('components/psges/upLoad')
 const radioBox = () => import('components/psges/radioBox')
 const checkBox = () => import('components/psges/checkBox')
 const alertBox = () => import('components/psges/alertBox')
+const tabs = () => import('components/psges/tabs')
+const tree = () => import('components/psges/tree')
 
 const router = new Router({
   routes: [
@@ -57,6 +59,16 @@ const router = new Router({
           path: '/home/alertBox',
           name: 'alertBox',
           component: alertBox
+        },
+        {
+          path: '/home/tabs',
+          name: 'tabs',
+          component: tabs
+        },
+        {
+          path: '/home/tree',
+          name: 'tree',
+          component: tree
         }
       ]
     }

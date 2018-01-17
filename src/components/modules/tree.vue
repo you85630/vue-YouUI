@@ -3,7 +3,6 @@
       <div class="list" v-for="li in tree" :key="li.index">
         <div :class="['lev-'+ li.indent]" @click="li.expanded=!li.expanded">
           <i v-if="li.children" class="fa" :class="[li.expanded ? 'fa-caret-down':'fa-caret-right']"></i>
-          <i class="fa" :class="[li.expanded ? 'fa-check-square':'fa-square-o']"></i>
           {{li.name}}
         </div>
         <tree v-show="li.expanded" :tree="li.children"></tree>

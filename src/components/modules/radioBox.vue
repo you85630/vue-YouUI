@@ -1,6 +1,6 @@
 <template>
   <div class="radio-box">
-    <p @click="checked(index)" :class="{active:index+1===radio}"  v-for="(li,index) in radioList" :key="li.index">
+    <p v-for="(li,index) in radioList" :key="li.index" @click="checked(index)" :class="{active:index+1===radio}">
       <i class="fa fa-dot-circle-o"  v-if="index+1===radio"></i>
       <i class="fa fa-circle-o" v-else></i>
       {{li.name}}

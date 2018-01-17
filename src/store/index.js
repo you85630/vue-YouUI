@@ -18,6 +18,10 @@ export default new Vuex.Store({
         linkto: '/home/checkBox'
       },
       {
+        name: '弹窗',
+        linkto: '/home/alertBox'
+      },
+      {
         name: '日期选择器',
         linkto: '/home/datePicker'
       },

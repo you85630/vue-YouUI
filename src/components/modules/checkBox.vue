@@ -1,9 +1,9 @@
 <template>
   <div class="check-box">
-    <p v-for="(li,index) in checkList" :key="li.index" @click="checked(index)" :class="{active:li.select}">
-      <i class="fa fa-check-square" v-if="li.select"></i>
+    <p @click="checked" :class="{active:select}">
+      <i class="fa fa-check-square" v-if="select"></i>
       <i class="fa fa-square-o" v-else></i>
-      {{li.name}}
+      <slot></slot>
     </p>
   </div>
 </template>
@@ -13,12 +13,27 @@ export default {
   props: ['value'],
   data () {
     return {
-      checkList: this.value
+      select: false,
+      list: this.value
     }
   },
   methods: {
-    checked (key) {
-      this.checkList[key].select = !this.checkList[key].select
+    checked () {
+      this.select = !this.select
+      let text = this.$slots.default[0].text
+      if (this.select) {
+        this.list.push(text)
+      } else {
+        let now = this.list
+        let Inx
+        now.filter((e, key) => {
+          if (e === text) {
+            Inx = key
+          }
+        })
+        now.splice(Inx, 1)
+      }
+      this.$emit('input', this.list)
     }
   }
 }
@@ -26,7 +41,6 @@ export default {
 
 <style lang="scss" scoped>
 .check-box{
-  p{
     display: inline-block;
     margin-left: 20px;
     vertical-align: middle;
@@ -37,9 +51,8 @@ export default {
     &:first-child{
       margin-left: 0;
     }
-  }
-  .active {
-    color:#409eff;
-  }
+}
+.active {
+  color:#409eff;
 }
 </style>

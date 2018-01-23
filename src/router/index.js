@@ -13,6 +13,7 @@ const checkBox = () => import('components/psges/checkBox')
 const alertBox = () => import('components/psges/alertBox')
 const tabs = () => import('components/psges/tabs')
 const tree = () => import('components/psges/tree')
+const table = () => import('components/psges/table')
 
 const router = new Router({
   routes: [
@@ -69,6 +70,11 @@ const router = new Router({
           path: '/home/tree',
           name: 'tree',
           component: tree
+        },
+        {
+          path: '/home/table',
+          name: 'table',
+          component: table
         }
       ]
     }

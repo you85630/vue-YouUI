@@ -76,13 +76,14 @@
 
 <script>
 export default {
+  props: ['value'],
   data () {
     return {
+      timeShow: this.value,
       timeCard: false,
       day: false,
       month: false,
       year: false,
-      timeShow: '',
       nowTime: {},
       nowMonth: [],
       prevMonth: [],
@@ -297,8 +298,8 @@ export default {
   border-radius: 2px;
   input {
     margin-left: 10px;
-    border: none;
     width: 96%;
+    border: none;
     font-size: 14px;
   }
   i {

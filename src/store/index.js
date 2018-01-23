@@ -36,6 +36,10 @@ export default new Vuex.Store({
       {
         name: '树形结构',
         linkto: '/home/tree'
+      },
+      {
+        name: '表格',
+        linkto: '/home/table'
       }
     ]
   },

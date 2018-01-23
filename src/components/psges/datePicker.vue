@@ -13,7 +13,7 @@ export default {
   },
   data () {
     return {
-      time: ''
+      time: '2018-1-23'
     }
   }
 }

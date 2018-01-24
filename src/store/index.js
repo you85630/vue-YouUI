@@ -40,6 +40,10 @@ export default new Vuex.Store({
       {
         name: '表格',
         linkto: '/home/table'
+      },
+      {
+        name: '图表',
+        linkto: '/home/echarts'
       }
     ]
   },

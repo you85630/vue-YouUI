@@ -19,17 +19,19 @@ export default {
       tableList: [
         {
           title: 1,
-          label: 1,
-          time: 1,
-          read: 1
+          label: 2,
+          time: 3,
+          read: 4
         }, {
-          title: 1,
-          label: 1,
-          time: 1,
-          read: 1
+          title: 4,
+          label: 5,
+          time: 6,
+          read: 7
         }
       ]
     }
+  },
+  methods: {
   }
 }
 </script>

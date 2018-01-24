@@ -11,6 +11,9 @@ import 'assets/css/reset.css'
 import 'assets/css/animate.css'
 // 引入fontawesome
 import 'font-awesome/css/font-awesome.css'
+// 引入echarts
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 
 Vue.config.productionTip = false
 

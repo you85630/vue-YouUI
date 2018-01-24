@@ -14,6 +14,7 @@ const alertBox = () => import('components/psges/alertBox')
 const tabs = () => import('components/psges/tabs')
 const tree = () => import('components/psges/tree')
 const table = () => import('components/psges/table')
+const echarts = () => import('components/psges/echarts')
 
 const router = new Router({
   routes: [
@@ -75,6 +76,11 @@ const router = new Router({
           path: '/home/table',
           name: 'table',
           component: table
+        },
+        {
+          path: '/home/echarts',
+          name: 'echarts',
+          component: echarts
         }
       ]
     }

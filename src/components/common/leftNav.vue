@@ -1,7 +1,7 @@
 <template>
   <div class="left-nav">
     <div class="logo">
-      <router-link to="/">UI组件库</router-link>
+      <router-link to="/">Vue组件库</router-link>
     </div>
     <div class="li" v-for="li in leftNav" :key="li.index">
       <router-link :to="li.linkto">{{li.name}}</router-link>

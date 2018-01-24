@@ -1,7 +1,9 @@
 <template>
   <div>
     <button @click="alert">点击弹窗</button>
-    <alert-box v-model="show" v-if="show" :text="boxMain"></alert-box>
+    <alert-box v-model="show" v-if="show" :text="boxMain">
+      {{boxMain.main}}
+    </alert-box>
   </div>
 </template>
 

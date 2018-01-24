@@ -12,9 +12,9 @@ export default {
     return {
       tableTitle: {
         title: 1,
-        label: 1,
-        time: 1,
-        read: 1
+        label: 2,
+        time: 3,
+        read: 4
       },
       tableList: [
         {

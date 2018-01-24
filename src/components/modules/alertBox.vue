@@ -6,7 +6,7 @@
         <div class="close" @click="close">&times;</div>
       </div>
       <div class="main">
-        {{boxMain.main}}
+        <slot></slot>
       </div>
       <div class="btn">
         <button class="cancel">取消</button>

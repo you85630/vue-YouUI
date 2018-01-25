@@ -1,7 +1,7 @@
 <template>
   <ul class="btn-box">
     <li>
-      <my-button>默认按钮</my-button>
+      <my-button @click="look">默认按钮</my-button>
     </li>
     <li>
       <my-button type="primary">主要按钮</my-button>
@@ -23,6 +23,11 @@ import myButton from 'components/modules/button'
 export default {
   components: {
     myButton
+  },
+  methods: {
+    look () {
+      console.log(this)
+    }
   }
 }
 </script>

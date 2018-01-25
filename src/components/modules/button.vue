@@ -1,10 +1,15 @@
 <template>
-  <button :class="type"><slot></slot></button>
+  <button :class="type" @click="select"><slot></slot></button>
 </template>
 
 <script>
 export default {
-  props: ['type']
+  props: ['type'],
+  methods: {
+    select () {
+      this.$emit('click')
+    }
+  }
 }
 </script>
 

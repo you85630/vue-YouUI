@@ -2,7 +2,7 @@
     <my-table :headline="tableTitle" :tableData="tableList">
       <template slot-scope="handle">
         <div class="handle">
-         <my-button type="primary">主要按钮</my-button>
+         <my-button type="primary" @click="look">主要按钮</my-button>
          <my-button type="error">错误按钮</my-button>
         </div>
       </template>
@@ -45,6 +45,11 @@ export default {
           four: 7
         }
       ]
+    }
+  },
+  methods: {
+    look () {
+      console.log(1)
     }
   }
 }

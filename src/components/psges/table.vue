@@ -11,16 +11,21 @@ export default {
   data () {
     return {
       tableTitle: [{
+        key: 'one',
         name: 1
       }, {
+        key: 'two',
         name: 2
       }, {
+        key: 'three',
         name: 3
       }, {
+        key: 'four',
         name: 4
       }, {
+        key: 'five',
         name: '操作',
-        width: 150,
+        width: '150px',
         align: 'center'
       }],
       tableList: [

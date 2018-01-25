@@ -1,31 +1,35 @@
 <template>
-    <my-table :headline="tableTitle" :tableData="tableList"></my-table>
+    <my-table :headline="tableTitle" :tableData="tableList">
+      <template slot-scope="handle">
+        <div class="handle">
+         <my-button type="primary">主要按钮</my-button>
+         <my-button type="error">错误按钮</my-button>
+        </div>
+      </template>
+    </my-table>
 </template>
 
 <script>
 import myTable from 'components/modules/table'
+import myButton from 'components/modules/button'
 export default {
   components: {
-    myTable
+    myTable,
+    myButton
   },
   data () {
     return {
       tableTitle: [{
-        key: 'one',
         name: 1
       }, {
-        key: 'two',
         name: 2
       }, {
-        key: 'three',
         name: 3
       }, {
-        key: 'four',
         name: 4
       }, {
-        key: 'five',
         name: '操作',
-        width: '150px',
+        width: '200px',
         align: 'center'
       }],
       tableList: [
@@ -33,14 +37,12 @@ export default {
           one: 1,
           two: 2,
           three: 3,
-          four: 4,
-          five: 'sdas'
+          four: 4
         }, {
           one: 4,
           two: 5,
           three: 6,
-          four: 7,
-          five: '2232'
+          four: 7
         }
       ]
     }
@@ -50,9 +52,13 @@ export default {
 
 <style lang="scss" scoped>
 .tables{
-  p{
-    font-size: 12px;
-    margin-top: 10px;
-  }
 }
+.handle{
+  button{
+    margin-left: 10px;
+    &:nth-child(1){
+      margin-left: 0;
+    }
+  }
+  }
 </style>

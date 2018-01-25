@@ -4,7 +4,10 @@
       <th v-for="(li,index) in headline" :key="index" :class="isAlign(index)" :style="styles(index)">{{li.name}}</th>
     </tr>
     <tr v-for="tr in tableData" :key="tr.index">
-      <td v-for="(li,index) in tr" :key="li.index" :class="Align(index)">{{li}}</td>
+      <td v-for="li in tr" :key="li.index">{{li}}</td>
+      <td :class="now.align" v-if="now.show">
+        <slot></slot>
+      </td>
     </tr>
   </table>
 </template>
@@ -14,7 +17,7 @@ export default {
   props: ['headline', 'tableData'],
   data () {
     return {
-      now: {}
+      now: ''
     }
   },
   computed: {
@@ -33,17 +36,9 @@ export default {
         if (list[i].align) {
           this.now = {
             align: list[i].align,
-            key: list[i].key
+            show: true
           }
           return list[i].align
-        }
-      }
-    },
-    Align: function () {
-      let now = this.now
-      return (i) => {
-        if (i === this.now.key) {
-          return now.align
         }
       }
     }
@@ -68,15 +63,16 @@ export default {
   }
   th{
     padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
     border-left: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 14px;
   }
   td{
-    border: 1px solid #ccc;
     padding: 10px;
+    border: 1px solid #ccc;
     font-size: 14px;
   }
+  // 对其方式
   .center{
     text-align: center;
   }

@@ -10,6 +10,10 @@ export default new Vuex.Store({
         linkto: '/home/switch'
       },
       {
+        name: '按钮',
+        linkto: '/home/button'
+      },
+      {
         name: '单选框',
         linkto: '/home/radioBox'
       },

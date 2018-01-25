@@ -6,6 +6,7 @@ const login = () => import('views/login')
 const home = () => import('views/home')
 
 const Switch = () => import('components/psges/switch')
+const button = () => import('components/psges/button')
 const datePicker = () => import('components/psges/datePicker')
 const upLoad = () => import('components/psges/upLoad')
 const radioBox = () => import('components/psges/radioBox')
@@ -36,6 +37,11 @@ const router = new Router({
           path: '/home/switch',
           name: 'switch',
           component: Switch
+        },
+        {
+          path: '/home/button',
+          name: 'button',
+          component: button
         },
         {
           path: '/home/datePicker',

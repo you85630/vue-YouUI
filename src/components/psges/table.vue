@@ -1,5 +1,5 @@
 <template>
-  <my-table :headline="tableTitle" :tableData="tableList"></my-table>
+    <my-table :headline="tableTitle" :tableData="tableList"></my-table>
 </template>
 
 <script>
@@ -10,23 +10,32 @@ export default {
   },
   data () {
     return {
-      tableTitle: {
-        title: 1,
-        label: 2,
-        time: 3,
-        read: 4
-      },
+      tableTitle: [{
+        name: 1
+      }, {
+        name: 2
+      }, {
+        name: 3
+      }, {
+        name: 4
+      }, {
+        name: '操作',
+        width: 150,
+        align: 'center'
+      }],
       tableList: [
         {
-          title: 1,
-          label: 2,
-          time: 3,
-          read: 4
+          one: 1,
+          two: 2,
+          three: 3,
+          four: 4,
+          five: 'sdas'
         }, {
-          title: 4,
-          label: 5,
-          time: 6,
-          read: 7
+          one: 4,
+          two: 5,
+          three: 6,
+          four: 7,
+          five: '2232'
         }
       ]
     }
@@ -37,5 +46,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.tables{
+  p{
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
 </style>

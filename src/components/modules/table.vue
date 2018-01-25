@@ -1,21 +1,12 @@
 <template>
-  <div class="table">
-    <table class="table-headline">
-      <tr>
-        <th v-for="li in title" :key="li.index">{{li}}</th>
-        <th class="operate">操作</th>
-      </tr>
-    </table>
-    <table class="table-content">
-      <tr v-for="tr in data" :key="tr.index">
-        <td v-for="li in tr" :key="li.index">{{li}}</td>
-        <td class="operate">
-          <button @click="operate">操作</button>
-          <button @click="remove">删除</button>
-        </td>
-      </tr>
-    </table>
-  </div>
+  <table class="table">
+    <tr>
+      <th v-for="(li,index) in headline" :key="index" :style="styles">{{li.name}}</th>
+    </tr>
+    <tr v-for="tr in tableData" :key="tr.index">
+      <td v-for="li in tr" :key="li.index">{{li}}</td>
+    </tr>
+  </table>
 </template>
 
 <script>
@@ -23,16 +14,20 @@ export default {
   props: ['headline', 'tableData'],
   data () {
     return {
-      title: this.headline,
-      data: this.tableData
+      styleObject: ''
     }
   },
-  methods: {
-    operate () {
-      this.$emit('input', this.title)
-    },
-    remove () {
-      this.$emit('input', this.data)
+  computed: {
+    styles: function () {
+      let list = this.headline
+      for (let i = 0; i < list.length; i++) {
+        let wid = list[i]
+        if (wid.width) {
+          const style = Object.assign({}, wid)
+          style.width = `${style.width}px`
+          return style
+        }
+      }
     }
   }
 }
@@ -40,37 +35,25 @@ export default {
 
 <style lang="scss" scoped>
 .table{
-  .operate{
-    padding: 10px 2px;
-    width: 120px;
-    text-align: center;
-    button{
-      border: none;
-      color: #fff;
-      padding: 4px 10px;
-      &:nth-child(1){
-        background-color: #409eff;
-      }
-       &:nth-child(2){
-        background-color: #ed3f14;
+  width: 100%;
+  border: 1px solid #ccc;
+  tr{
+    &:nth-child(1){
+      background-color: #f5f5f5;
+      &:hover{
+        background-color: #f5f5f5;
       }
     }
+    &:hover{
+      background-color:#edf7fe;
+    }
   }
-}
-.table-headline{
-  width: 100%;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border-bottom: none;
   th{
     padding: 10px;
     font-size: 14px;
     font-weight: bold;
     border-left: 1px solid #ccc;
   }
-}
-.table-content{
-  width: 100%;
   td{
     border: 1px solid #ccc;
     padding: 10px;

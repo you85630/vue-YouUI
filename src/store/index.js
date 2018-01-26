@@ -22,6 +22,10 @@ export default new Vuex.Store({
         linkto: '/home/checkBox'
       },
       {
+        name: '选择器',
+        linkto: '/home/select'
+      },
+      {
         name: '弹窗',
         linkto: '/home/alertBox'
       },

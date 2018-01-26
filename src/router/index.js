@@ -11,6 +11,7 @@ const datePicker = () => import('components/psges/datePicker')
 const upLoad = () => import('components/psges/upLoad')
 const radioBox = () => import('components/psges/radioBox')
 const checkBox = () => import('components/psges/checkBox')
+const select = () => import('components/psges/select')
 const alertBox = () => import('components/psges/alertBox')
 const tabs = () => import('components/psges/tabs')
 const tree = () => import('components/psges/tree')
@@ -62,6 +63,11 @@ const router = new Router({
           path: '/home/checkBox',
           name: 'checkBox',
           component: checkBox
+        },
+        {
+          path: '/home/select',
+          name: 'select',
+          component: select
         },
         {
           path: '/home/alertBox',

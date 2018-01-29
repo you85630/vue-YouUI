@@ -3,10 +3,10 @@
     <tr>
       <th v-for="(li,index) in headline" :key="index" :class="isAlign(index)" :style="styles(index)">{{li.name}}</th>
     </tr>
-    <tr v-for="tr in tableData" :key="tr.index">
+    <tr v-for="(tr,index) in tableData" :key="tr.index">
       <td v-for="li in tr" :key="li.index">{{li}}</td>
       <td :class="now.align" v-if="now.show">
-        <slot></slot>
+        <slot :id="index"></slot>
       </td>
     </tr>
   </table>

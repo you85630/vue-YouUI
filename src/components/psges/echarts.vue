@@ -1,6 +1,8 @@
 <template>
   <div class="echarts-box">
-    <my-echarts :echarts='option'></my-echarts>
+    <div v-for="li in list" :key="li.index">
+      <my-echarts :echarts='li.option'></my-echarts>
+    </div>
   </div>
 </template>
 
@@ -12,20 +14,25 @@ export default {
   },
   data () {
     return {
-      option: {
-        xAxis: {
-          type: 'category',
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-        },
-        yAxis: {
-          type: 'value'
-        },
-        series: [{
-          data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: 'line',
-          smooth: true
-        }]
-      }
+      list: [
+        {
+          option: {
+            name: 'name',
+            option: {
+              title: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+              data: [820, 932, 901, 934, 1290, 1330, 1320]
+            }
+          }
+        }, {
+          option: {
+            name: 'name2',
+            option: {
+              title: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+              data: [820, 932, 901, 934, 1290, 1330, 1320]
+            }
+          }
+        }
+      ]
     }
   }
 }
@@ -33,7 +40,9 @@ export default {
 
 <style lang="scss" scoped>
 .echarts-box{
-  width: 100%;
-  height: 300px;
+  div{
+    width: 100%;
+    height: 300px;
+  }
 }
 </style>

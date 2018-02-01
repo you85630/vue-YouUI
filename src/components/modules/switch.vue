@@ -1,12 +1,17 @@
 <template>
-  <div class="switch" :class="{open:btn}" @click="cutBtn">
-    <span></span>
+  <div class="switch-box">
+    <div class="switch" :class="{disabled:disabled}" v-if="disabled">
+      <span></span>
+    </div>
+    <div class="switch" :class="{open:btn}" @click="cutBtn" v-else>
+      <span></span>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['value'],
+  props: ['value', 'disabled'],
   data () {
     return {
       btn: this.value
@@ -45,6 +50,14 @@ export default {
   background-color: #2d8cf0;
   span {
     right: 0;
+  }
+}
+.disabled{
+  border-color: #eee;
+  background-color: #eee;
+  cursor: not-allowed;
+  span{
+    background-color: #ccc;
   }
 }
 </style>

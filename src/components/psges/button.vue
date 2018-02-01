@@ -1,32 +1,61 @@
 <template>
-  <ul class="btn-box">
-    <li>
-      <my-button @click="look">默认按钮</my-button>
-    </li>
-    <li>
-      <my-button type="primary">主要按钮</my-button>
-    </li>
-    <li>
-      <my-button type="success">成功按钮</my-button>
-    </li>
-    <li>
-      <my-button type="warning">警告按钮</my-button>
-    </li>
-    <li>
-      <my-button type="error">错误按钮</my-button>
-    </li>
-  </ul>
+  <div class="btn-box">
+    <p>各类型按钮</p>
+    <ul>
+      <li>
+        <my-button>默认按钮</my-button>
+      </li>
+      <li>
+        <my-button type="ghost">ghost</my-button>
+      </li>
+      <li>
+        <my-button type="dashed">dashed</my-button>
+      </li>
+      <li>
+        <my-button type="primary">primary</my-button>
+      </li>
+      <li>
+        <my-button type="success">success</my-button>
+      </li>
+      <li>
+        <my-button type="warning">warning</my-button>
+      </li>
+      <li>
+        <my-button type="error">error</my-button>
+      </li>
+    </ul>
+    <div class="long">
+      <p>长按钮</p>
+      <my-button type="primary" :long="true">主要按钮</my-button>
+    </div>
+    <my-tips :list="tableList"></my-tips>
+  </div>
 </template>
 
 <script>
 import myButton from 'components/modules/button'
+import myTips from 'components/common/tips'
+
 export default {
   components: {
-    myButton
+    myButton,
+    myTips
   },
-  methods: {
-    look () {
-      console.log(this)
+  data () {
+    return {
+      tableList: [
+        {
+          name: 'type',
+          explain: '按钮类型，可选值为primary、ghost、dashed、success、warning、error或者不设置',
+          types: 'String',
+          default: '-'
+        }, {
+          name: 'long',
+          explain: '开启后，按钮的长度为 100%',
+          types: 'Boolean',
+          default: 'false'
+        }
+      ]
     }
   }
 }
@@ -34,9 +63,19 @@ export default {
 
 <style lang="scss" scoped>
 .btn-box{
-  display: flex;
-  li{
-    margin: 0 10px;
+  p{
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  ul{
+    margin-bottom: 10px;
+    display: flex;
+    li{
+      margin-right: 10px;
+    }
+  }
+  .long{
+    margin-bottom: 20px;
   }
 }
 </style>

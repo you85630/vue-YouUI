@@ -1,8 +1,7 @@
 <template>
   <div class="check-box">
     <p @click="checked" :class="{active:select}">
-      <i class="fa fa-check-square" v-if="select"></i>
-      <i class="fa fa-square-o" v-else></i>
+      <i class="fa" :class="select?'fa-check-square':'fa-square-o'"></i>
       <slot></slot>
     </p>
   </div>

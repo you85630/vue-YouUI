@@ -1,16 +1,17 @@
 <template>
-  <div class="alert-box" v-if="alert">
+  <div class="alert-box" v-if="alertBox.show">
     <div class="alert-main">
       <div class="headline">
-        <h2>{{boxMain.headline}}</h2>
-        <div class="close" @click="close">&times;</div>
+        <h2 v-if="alertBox.title">{{alertBox.title}}</h2>
+        <h2 v-else>提示：</h2>
+        <div class="close" @click="alertBox.show=!alertBox.show">&times;</div>
       </div>
       <div class="main">
         <slot></slot>
       </div>
       <div class="btn">
-        <button class="cancel">取消</button>
-        <button>确定</button>
+        <button class="cancel" v-if="cancel">取消</button>
+        <button @click="alertBox.show=!alertBox.show" v-if="primary">确定</button>
       </div>
     </div>
   </div>
@@ -18,17 +19,10 @@
 
 <script>
 export default {
-  props: ['value', 'text'],
+  props: ['value', 'cancel', 'primary'],
   data () {
     return {
-      alert: this.value,
-      boxMain: this.text
-    }
-  },
-  methods: {
-    close () {
-      this.alert = false
-      this.$emit('input', this.alert)
+      alertBox: this.value
     }
   }
 }
@@ -37,6 +31,7 @@ export default {
 <style lang="scss" scoped>
 .alert-box{
   position: fixed;
+  z-index: 9999;
   top: 0;
   left: 0;
   display: flex;
@@ -44,13 +39,13 @@ export default {
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: rgba($color: #000000, $alpha: 0.5);
+  background-color: rgba($color: #000000, $alpha: 0.8);
   font-size: 0;
 }
 .alert-main{
   position: absolute;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 20px;
   min-width: 400px;
   max-width:700px;
   border-radius: 2px;

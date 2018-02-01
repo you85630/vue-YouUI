@@ -1,10 +1,13 @@
 <template>
-  <button :class="type" @click="select"><slot></slot></button>
+  <div class="button-box">
+    <button :class="type" @click="select" class="long" v-if="long"><slot></slot></button>
+    <button :class="type" @click="select" v-else><slot></slot></button>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ['type'],
+  props: ['type', 'long'],
   methods: {
     select () {
       this.$emit('click')
@@ -24,6 +27,9 @@ button{
     border-color: #409eff;
     color: #409eff;
   }
+}
+.long{
+  width: 100%;
 }
 .primary{
   border-color: #409eff;
@@ -64,5 +70,11 @@ button{
     background-color: #f16543;
     color: #fff;
   }
+}
+.ghost{
+  background-color: #fff;
+}
+.dashed{
+  border-style: dashed;
 }
 </style>

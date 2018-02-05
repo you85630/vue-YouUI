@@ -2,18 +2,31 @@
   <div>
     <date-picker v-model="time"></date-picker>
     <p>{{time}}</p>
+
+    <my-tips :list="tableList"></my-tips>
   </div>
 </template>
 
 <script>
 import datePicker from 'components/modules/datePicker'
+import myTips from 'components/common/tips'
+
 export default {
   components: {
-    datePicker
+    datePicker,
+    myTips
   },
   data () {
     return {
-      time: '2018-1-23'
+      time: '2018-1-23',
+      tableList: [
+        {
+          name: 'value',
+          explain: '日期',
+          types: 'Date',
+          default: '_'
+        }
+      ]
     }
   }
 }
@@ -22,5 +35,6 @@ export default {
 <style lang="scss" scoped>
 p{
   font-size: 14px;
+  margin-bottom: 20px;
 }
 </style>

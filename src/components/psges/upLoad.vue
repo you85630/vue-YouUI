@@ -2,18 +2,31 @@
   <div>
     <up-load v-model="pic"></up-load>
     <textarea :value="pic"></textarea>
+
+    <my-tips :list="tableList"></my-tips>
   </div>
 </template>
 
 <script>
 import upLoad from 'components/modules/upLoad'
+import myTips from 'components/common/tips'
+
 export default {
   components: {
-    upLoad
+    upLoad,
+    myTips
   },
   data () {
     return {
-      pic: ''
+      pic: '',
+      tableList: [
+        {
+          name: 'value',
+          explain: '图片转换为base46',
+          types: 'base46',
+          default: '_'
+        }
+      ]
     }
   }
 }
@@ -25,5 +38,6 @@ textarea{
   height: 200px;
   margin-top: 10px;
   padding: 1%;
+  margin-bottom: 20px;
 }
 </style>

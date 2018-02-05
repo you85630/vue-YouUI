@@ -28,17 +28,22 @@ export default {
         show: false
       },
       tableList: [
-        // {
-        //   name: 'type',
-        //   explain: '按钮类型，可选值为primary、ghost、dashed、success、warning、error或者不设置',
-        //   types: 'String',
-        //   default: '-'
-        // }, {
-        //   name: 'long',
-        //   explain: '开启后，按钮的长度为 100%',
-        //   types: 'Boolean',
-        //   default: 'false'
-        // }
+        {
+          name: 'boxMain',
+          explain: '内部包含title标题，main主体内容，和show是否显示',
+          types: 'Array',
+          default: '_'
+        }, {
+          name: 'primary',
+          explain: '开启后显示确定按钮',
+          types: 'Boolean',
+          default: 'false'
+        }, {
+          name: 'cancel',
+          explain: '开启后显示取消按钮',
+          types: 'Boolean',
+          default: 'false'
+        }
       ]
     }
   },

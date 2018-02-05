@@ -1,14 +1,19 @@
 <template>
   <div>
     <my-tree :tree="list"></my-tree>
+
+    <my-tips :list="tableList"></my-tips>
   </div>
 </template>
 
 <script>
 import myTree from 'components/modules/tree'
+import myTips from 'components/common/tips'
+
 export default {
   components: {
-    myTree
+    myTree,
+    myTips
   },
   data () {
     return {
@@ -55,6 +60,14 @@ export default {
           indent: '1',
           expanded: false
         }
+      ],
+      tableList: [
+        {
+          name: 'value',
+          explain: '树形组件数据',
+          types: 'Array',
+          default: '_'
+        }
       ]
     }
   }
@@ -62,4 +75,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.tips{
+  margin-top: 20px;
+}
 </style>

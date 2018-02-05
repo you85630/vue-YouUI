@@ -4,12 +4,13 @@
 
 <script>
 export default {
-  props: ['echarts'],
+  props: ['value', 'echarts'],
   data () {
     return {
       data: {
+        option: {},
         name: this.echarts.name,
-        option: {
+        bar: {
           color: ['#3398DB'],
           tooltip: {
             trigger: 'axis',
@@ -50,7 +51,14 @@ export default {
     }
   },
   mounted () {
-    this.$echarts.init(document.getElementById(this.data.name)).setOption(this.data.option)
+    this.$echarts.init(document.getElementById(this.data.name)).setOption(this.option)
+  },
+  created () {
+    console.log(this.value)
+    if (this.value === 'bar') {
+      this.option = this.bar
+      console.log(this.bar)
+    }
   }
 }
 </script>

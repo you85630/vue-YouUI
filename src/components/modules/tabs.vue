@@ -1,12 +1,12 @@
 <template>
-  <div class="tabs" v-if="tabsList.length">
+  <div class="tabs" v-if="list.length">
     <div class="tabs—headline">
-      <div class="tabs-li" v-for="(li,index) in tabsList" :key="li.index" @click="cutTabs(index)" :class="{active:index===num}">
+      <div class="tabs-li" v-for="(li,index) in list" :key="li.index" @click="cutTabs(index)" :class="{active:index===num}">
         <p>{{li.name}}</p><span @click="removeList(index)">&times;</span>
       </div>
     </div>
     <div class="tabs-content">
-      <div class="tabs-content-li" v-for="(li,index) in tabsList" :key="li.index" v-if="index===num">
+      <div class="tabs-content-li" v-for="(li,index) in list" :key="li.index" v-if="index===num">
         {{li.content}}
       </div>
     </div>
@@ -15,23 +15,10 @@
 
 <script>
 export default {
+  props: ['value', 'list'],
   data () {
     return {
-      num: 0,
-      tabsList: [
-        {
-          name: '标题1',
-          content: '11111'
-        },
-        {
-          name: '标题2',
-          content: '22222'
-        },
-        {
-          name: '标题3',
-          content: '33333'
-        }
-      ]
+      num: this.value
     }
   },
   methods: {
@@ -39,7 +26,7 @@ export default {
       this.num = key
     },
     removeList (key) {
-      this.tabsList.splice(key, 1)
+      this.list.splice(key, 1)
     }
   }
 }

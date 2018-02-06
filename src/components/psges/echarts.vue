@@ -1,6 +1,16 @@
 <template>
   <div class="echarts-box">
-    <my-echarts :echarts='option'></my-echarts>
+    <ul>
+      <li>
+        <my-echarts :echarts='linelist'></my-echarts>
+      </li>
+      <li>
+        <my-echarts :echarts='barlist'></my-echarts>
+      </li>
+      <li>
+        <my-echarts :echarts='pielist'></my-echarts>
+      </li>
+    </ul>
 
       <my-tips :list="tableList"></my-tips>
   </div>
@@ -17,14 +27,37 @@ export default {
   },
   data () {
     return {
-      option: {
-        id: 'name',
-        types: 'bar',
+      barlist: {
+        id: '111',
+        type: 'bar',
         option: {
           title: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
           data: [820, 932, 901, 934, 1290, 1330, 1320]
         }
       },
+      linelist: {
+        id: '222',
+        type: 'line',
+        option: {
+          title: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: [820, 932, 901, 934, 1290, 1330, 1320]
+        }
+      },
+      pielist: {
+        id: '333',
+        type: 'pie',
+        option: {
+          title: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎'],
+          data: [
+                {value: 335, name: '直接访问'},
+                {value: 310, name: '邮件营销'},
+                {value: 234, name: '联盟广告'},
+                {value: 135, name: '视频广告'},
+                {value: 1548, name: '搜索引擎'}
+          ]
+        }
+      },
+      // 组件说明
       tableList: [
         {
           name: 'id',
@@ -50,9 +83,13 @@ export default {
 
 <style lang="scss" scoped>
 .echarts-box{
-  div{
-    width: 100%;
-    height: 300px;
+  ul{
+    li{
+      display: inline-block;
+      width: 30%;
+      height: 300px;
+      margin: 1%;
+    }
   }
 }
 .tips{

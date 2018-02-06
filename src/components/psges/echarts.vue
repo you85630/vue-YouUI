@@ -10,6 +10,9 @@
       <li>
         <my-echarts :echarts='pielist'></my-echarts>
       </li>
+      <li>
+        <my-echarts :echarts='radarlist'></my-echarts>
+      </li>
     </ul>
 
       <my-tips :list="tableList"></my-tips>
@@ -27,17 +30,17 @@ export default {
   },
   data () {
     return {
-      barlist: {
-        id: '111',
-        type: 'bar',
+      linelist: {
+        id: '222',
+        type: 'line',
         option: {
           title: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
           data: [820, 932, 901, 934, 1290, 1330, 1320]
         }
       },
-      linelist: {
-        id: '222',
-        type: 'line',
+      barlist: {
+        id: '111',
+        type: 'bar',
         option: {
           title: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
           data: [820, 932, 901, 934, 1290, 1330, 1320]
@@ -54,6 +57,44 @@ export default {
                 {value: 234, name: '联盟广告'},
                 {value: 135, name: '视频广告'},
                 {value: 1548, name: '搜索引擎'}
+          ]
+        }
+      },
+      radarlist: {
+        id: '444',
+        type: 'radar',
+        option: {
+          title: [
+            {
+              name: '销售',
+              max: 6500
+            },
+            {
+              name: '管理',
+              max: 16000
+            }, {
+              name: '信息技术',
+              max: 30000
+            }, {
+              name: '客服',
+              max: 38000
+            }, {
+              name: '研发',
+              max: 52000
+            }, {
+              name: '市场',
+              max: 25000
+            }
+          ],
+          data: [
+            {
+              value: [4300, 10000, 28000, 35000, 50000, 19000],
+              name: '预算分配'
+            },
+            {
+              value: [5000, 14000, 28000, 31000, 42000, 21000],
+              name: '实际开销'
+            }
           ]
         }
       },
@@ -86,8 +127,8 @@ export default {
   ul{
     li{
       display: inline-block;
-      width: 30%;
-      height: 300px;
+      width: 45%;
+      height: 450px;
       margin: 1%;
     }
   }

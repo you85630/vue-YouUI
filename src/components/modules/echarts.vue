@@ -61,7 +61,7 @@ export default {
         pie: {
           tooltip: {
             trigger: 'item',
-            formatter: '{a} <br/>{b}: {c} ({d}%)'
+            formatter: '{b}: {c} ({d}%)'
           },
           legend: {
             orient: 'vertical',
@@ -95,6 +95,27 @@ export default {
               data: this.echarts.option.data
             }
           ]
+        },
+        radar: {
+          legend: {
+            data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+          },
+          radar: {
+            name: {
+              textStyle: {
+                color: '#fff',
+                backgroundColor: '#999',
+                borderRadius: 3,
+                padding: [3, 5]
+              }
+            },
+            indicator: this.echarts.option.title
+          },
+          series: [{
+            name: '预算 vs 开销（Budget vs spending）',
+            type: 'radar',
+            data: this.echarts.option.data
+          }]
         }
       }
     }
@@ -116,68 +137,8 @@ export default {
       if (types === 'pie') {
         option = this.data.pie
       }
-      if (types === 'scatter') {
-        option = this.data.scatter
-      }
-      if (types === 'map') {
-        option = this.data.map
-      }
-      if (types === 'candlestick') {
-        option = this.data.candlestick
-      }
       if (types === 'radar') {
         option = this.data.radar
-      }
-      if (types === 'boxplot') {
-        option = this.data.boxplot
-      }
-      if (types === 'heatmap') {
-        option = this.data.heatmap
-      }
-      if (types === 'graph') {
-        option = this.data.graph
-      }
-      if (types === 'tree') {
-        option = this.data.tree
-      }
-      if (types === 'treemap') {
-        option = this.data.treemap
-      }
-      if (types === 'sunburst') {
-        option = this.data.sunburst
-      }
-      if (types === 'parallel') {
-        option = this.data.parallel
-      }
-      if (types === 'sankey') {
-        option = this.data.sankey
-      }
-      if (types === 'funnel') {
-        option = this.data.funnel
-      }
-      if (types === 'gauge') {
-        option = this.data.gauge
-      }
-      if (types === 'pictorialbar') {
-        option = this.data.pictorialbar
-      }
-      if (types === 'themeriver') {
-        option = this.data.themeriver
-      }
-      if (types === 'custom') {
-        option = this.data.custom
-      }
-      if (types === 'dataset') {
-        option = this.data.dataset
-      }
-      if (types === 'scattergl') {
-        option = this.data.scattergl
-      }
-      if (types === 'flowgl') {
-        option = this.data.flowgl
-      }
-      if (types === 'graphgl') {
-        option = this.data.graphgl
       }
       this.$echarts.init(document.getElementById(this.echarts.id)).setOption(option)
     }

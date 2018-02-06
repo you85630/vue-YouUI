@@ -1,15 +1,13 @@
 <template>
-  <div :id="echarts.name" class="myChart"></div>
+  <div :id="echarts.id" class="myChart"></div>
 </template>
 
 <script>
 export default {
-  props: ['value', 'echarts'],
+  props: ['echarts'],
   data () {
     return {
       data: {
-        option: {},
-        name: this.echarts.name,
         bar: {
           color: ['#3398DB'],
           tooltip: {
@@ -51,14 +49,7 @@ export default {
     }
   },
   mounted () {
-    this.$echarts.init(document.getElementById(this.data.name)).setOption(this.option)
-  },
-  created () {
-    console.log(this.value)
-    if (this.value === 'bar') {
-      this.option = this.bar
-      console.log(this.bar)
-    }
+    this.$echarts.init(document.getElementById(this.echarts.id)).setOption(this.data.bar)
   }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div class="echarts-box">
-    <my-echarts :echarts='barData' v-model="bar"></my-echarts>
+    <my-echarts :echarts='option'></my-echarts>
 
-    <my-tips :list="mytips"></my-tips>
+      <my-tips :list="tableList"></my-tips>
   </div>
 </template>
 
@@ -17,18 +17,29 @@ export default {
   },
   data () {
     return {
-      barData: {
-        name: 'name',
+      option: {
+        id: 'name',
+        types: 'bar',
         option: {
           title: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
           data: [820, 932, 901, 934, 1290, 1330, 1320]
         }
       },
-      mytips: [
+      tableList: [
         {
           name: 'id',
-          explain: '当前列索引',
-          types: 'number',
+          explain: 'echarts的id',
+          types: 'String',
+          default: '_'
+        }, {
+          name: 'types',
+          explain: 'echarts的类型',
+          types: 'String',
+          default: '_'
+        }, {
+          name: 'option',
+          explain: 'echarts的数据',
+          types: 'Array',
           default: '_'
         }
       ]

@@ -51,7 +51,7 @@ export default {
           ],
           series: [
             {
-              name: '直接访问',
+              name: '数据',
               type: 'bar',
               barWidth: '60%',
               data: this.echarts.option.data

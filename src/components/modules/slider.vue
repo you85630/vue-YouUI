@@ -1,0 +1,72 @@
+<template>
+  <div class="slider" @click="slider"><p :style="now"><em @mousemove="hover"></em></p></div>
+</template>
+
+<script>
+export default {
+  props: ['value'],
+  data () {
+    return {
+      now: {
+        width: this.value + '%'
+      }
+    }
+  },
+  methods: {
+    slider (el) {
+      let wid = this.$el.scrollWidth
+      let disX = el.clientX - this.$el.offsetLeft
+      let offLeft = disX / wid
+      this.now.width = (offLeft * 100).toFixed(2) + '%'
+      this.$emit('input', this.now.width)
+    },
+    hover (el) {
+      let wid = this.$el.scrollWidth
+      let disX = el.clientX - this.$el.offsetLeft
+      let offLeft = disX / wid
+      this.now.width = (offLeft * 100).toFixed(2) + '%'
+      this.$emit('input', this.now.width)
+    }
+  },
+  watch: {
+    'value': (val) => {
+      console.log(val)
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.slider{
+    position: relative;
+    width: 100%;
+    height: 5px;
+    border-radius: 4px;
+    background-color: #eee;
+    cursor: pointer;
+    p{
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      width: 0%;
+      height: 5px;
+      border-radius: 4px;
+      background: #3c9ffc;
+      em{
+        position: absolute;
+        top: -4px;
+        left: 100%;
+        margin-left: -10px;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #3c9ffc;
+        border-radius: 50px;
+        background-color: #fff;
+        transition: all .2s linear;
+        &:hover{
+          transform: scale(1.4);
+        }
+      }
+    }
+}
+</style>

@@ -52,6 +52,10 @@ export default new Vuex.Store({
       {
         name: '图表',
         linkto: '/home/echarts'
+      },
+      {
+        name: '滑块',
+        linkto: '/home/slider'
       }
     ]
   },

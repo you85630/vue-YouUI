@@ -17,6 +17,7 @@ const tabs = () => import('components/psges/tabs')
 const tree = () => import('components/psges/tree')
 const table = () => import('components/psges/table')
 const echarts = () => import('components/psges/echarts')
+const slider = () => import('components/psges/slider')
 
 const router = new Router({
   routes: [
@@ -93,6 +94,11 @@ const router = new Router({
           path: '/home/echarts',
           name: 'echarts',
           component: echarts
+        },
+        {
+          path: '/home/slider',
+          name: 'slider',
+          component: slider
         }
       ]
     }

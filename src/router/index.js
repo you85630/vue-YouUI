@@ -12,6 +12,7 @@ const upLoad = () => import('components/psges/upLoad')
 const radioBox = () => import('components/psges/radioBox')
 const checkBox = () => import('components/psges/checkBox')
 const select = () => import('components/psges/select')
+const cascader = () => import('components/psges/cascader')
 const alertBox = () => import('components/psges/alertBox')
 const tabs = () => import('components/psges/tabs')
 const tree = () => import('components/psges/tree')
@@ -69,6 +70,11 @@ const router = new Router({
           path: '/home/select',
           name: 'select',
           component: select
+        },
+        {
+          path: '/home/cascader',
+          name: 'cascader',
+          component: cascader
         },
         {
           path: '/home/alertBox',

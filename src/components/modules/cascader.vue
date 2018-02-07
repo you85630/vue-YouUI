@@ -1,5 +1,5 @@
 <template>
-  <div class="select">
+  <div class="cascader">
     <div class="input">
       <p @click="changInput" :class="{active:show}">
         <span v-if="!select">请选择</span>
@@ -7,9 +7,20 @@
         <i class="fa" :class="show?'fa-caret-up':'fa-caret-down'"></i>
       </p>
     </div>
-    <ul v-if="show">
-      <li v-for="li in list" :key="li.index" @click="option(li)">{{li}}</li>
-    </ul>
+    <div class="cascaderbox" v-if="show">
+      <div class="box">
+        <div class="li" v-for="li in list" :key="li.index" @click="option(li)">
+          <span>{{li.label}}</span>
+          <i class="fa fa-angle-right"></i>
+        </div>
+      </div>
+      <div :class="['lev-'+ li.indent]" v-for="li in list" :key="li.index">
+        <div class="li" v-for="i in li.children" :key="i.index">
+          <span>{{i.label}}</span>
+          <i class="fa fa-angle-right"></i>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -19,7 +30,7 @@ export default {
   data () {
     return {
       select: this.value,
-      show: false
+      show: true
     }
   },
   methods: {
@@ -27,16 +38,20 @@ export default {
       this.show = !this.show
     },
     option (key) {
-      this.show = false
-      this.select = key
-      this.$emit('input', key)
+      // this.show = false
+      // this.select = key
+      // this.$emit('input', key)
     }
+  },
+  created () {
+    let a = this.list
+    console.log(a)
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.select{
+.cascader{
   position: relative;
   .input{
     cursor: pointer;
@@ -75,7 +90,7 @@ export default {
       border-color: #409eff;
     }
   }
-  ul{
+  .cascaderbox{
     position: absolute;
     width: 100px;
     left: 0;
@@ -86,14 +101,29 @@ export default {
     border-radius: 2px;
     border: 1px solid #ccc;
     padding: 4px 0;
-    li{
+    .li{
       font-size: 12px;
-      padding: 6px 15px;
+      padding: 6px 6px;
       cursor: pointer;
+      i{
+        float: right;
+      }
       &:hover{
         background-color: #f5f5f5;
       }
     }
+  }
+}
+@for $n from 0 through 10 {
+  .lev-#{$n} {
+    width: 100%;
+    position: absolute;
+    top: -1px;
+    left: 100% * $n;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 1px solid #ccc;
   }
 }
 </style>

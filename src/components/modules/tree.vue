@@ -20,7 +20,6 @@ export default {
 <style scoped lang="scss">
 .tree {
   font-size: 14px;
-
   user-select: none;
 }
 @for $n from 0 through 10 {

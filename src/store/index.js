@@ -26,6 +26,10 @@ export default new Vuex.Store({
         linkto: '/home/select'
       },
       {
+        name: '级联选择器',
+        linkto: '/home/cascader'
+      },
+      {
         name: '弹窗',
         linkto: '/home/alertBox'
       },

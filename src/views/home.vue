@@ -29,6 +29,7 @@ export default {
     margin: 10px;
     padding: 10px;
     background-color: #fff;
+    overflow-y: auto;
   }
 }
 .slide-fade-enter-active {

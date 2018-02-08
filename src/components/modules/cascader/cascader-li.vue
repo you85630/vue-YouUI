@@ -17,8 +17,13 @@ export default {
   methods: {
     select (key) {
       let list = this.cascader
-      list[key].select = !list[key].select
-      console.log(list[key].label)
+      for (let i = 0; i < list.length; i++) {
+        if (i === key) {
+          list[key].select = !list[key].select
+        } else {
+          list[i].select = false
+        }
+      }
     }
   }
 }

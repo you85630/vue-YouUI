@@ -1,7 +1,6 @@
 <template>
   <div>
     <my-cascader v-model="select" :list='selectList'></my-cascader>
-    <p>未完成</p>
     <my-tips :list="tableList"></my-tips>
   </div>
 </template>
@@ -68,11 +67,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p{
-  margin-top: 20px;
-  font-size: 14px;
-  color: #f00;
-}
 .tips{
   margin-top: 20px;
 }

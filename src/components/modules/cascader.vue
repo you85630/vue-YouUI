@@ -7,7 +7,7 @@
         <i class="fa" :class="show?'fa-caret-up':'fa-caret-down'"></i>
       </p>
     </div>
-    <cascader-li :cascader="list"  v-if="show"></cascader-li>
+    <cascader-li :cascader="list"  v-if="show" @input="option"></cascader-li>
   </div>
 </template>
 
@@ -27,6 +27,10 @@ export default {
   methods: {
     changInput () {
       this.show = !this.show
+    },
+    option (e) {
+      console.log(e)
+      this.$emit('input', this.select)
     }
   }
 }

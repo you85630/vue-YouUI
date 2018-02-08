@@ -69,9 +69,11 @@ export default {
 
 <style lang="scss" scoped>
 p{
+  margin-top: 20px;
   font-size: 14px;
+  color: #f00;
 }
 .tips{
-  margin-top: 21px;
+  margin-top: 20px;
 }
 </style>

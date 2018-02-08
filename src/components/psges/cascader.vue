@@ -20,50 +20,39 @@ export default {
       select: '',
       selectList: [{
         label: '北京',
-        indent: 1,
-        children: [
-          {
-            label: '故宫',
-            indent: 2
-          },
-          {
-            label: '天坛',
-            indent: 2
-          },
-          {
-            label: '王府井',
-            indent: 2
-          }
-        ]
+        select: false,
+        children: [{
+          label: '故宫',
+          select: false
+        }, {
+          label: '天坛',
+          select: false
+        }, {
+          label: '王府井',
+          select: false
+        }]
       }, {
         label: '江苏',
-        indent: 1,
-        children: [
-          {
-            label: '南京',
-            indent: 2,
-            children: [
-              {
-                label: '夫子庙',
-                indent: 3
-              }
-            ]
-          },
-          {
-            label: '苏州',
-            indent: 2,
-            children: [
-              {
-                label: '拙政园',
-                indent: 3
-              },
-              {
-                label: '狮子林',
-                indent: 3
-              }
-            ]
+        select: false,
+        children: [{
+          label: '南京',
+          select: false,
+          children: [{
+            label: '夫子庙',
+            select: false
           }
-        ]
+          ]
+        }, {
+          label: '苏州',
+          select: false,
+          children: [{
+            label: '拙政园',
+            select: false
+          }, {
+            label: '狮子林',
+            select: false
+          }]
+        }]
       }],
       tableList: [
         {
@@ -80,6 +69,6 @@ export default {
 
 <style lang="scss" scoped>
 .tips{
-  margin-top: 20px;
+  margin-top: 21px;
 }
 </style>

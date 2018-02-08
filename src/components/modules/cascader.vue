@@ -7,45 +7,27 @@
         <i class="fa" :class="show?'fa-caret-up':'fa-caret-down'"></i>
       </p>
     </div>
-    <div class="cascaderbox" v-if="show">
-      <div class="box">
-        <div class="li" v-for="li in list" :key="li.index" @click="option(li)">
-          <span>{{li.label}}</span>
-          <i class="fa fa-angle-right"></i>
-        </div>
-      </div>
-      <div :class="['lev-'+ li.indent]" v-for="li in list" :key="li.index">
-        <div class="li" v-for="i in li.children" :key="i.index">
-          <span>{{i.label}}</span>
-          <i class="fa fa-angle-right"></i>
-        </div>
-      </div>
-    </div>
+    <cascader-li :cascader="list"  v-if="show"></cascader-li>
   </div>
 </template>
 
 <script>
+import cascaderLi from 'components/modules/cascader/cascader-li'
 export default {
   props: ['value', 'list'],
+  components: {
+    cascaderLi
+  },
   data () {
     return {
       select: this.value,
-      show: true
+      show: false
     }
   },
   methods: {
     changInput () {
       this.show = !this.show
-    },
-    option (key) {
-      // this.show = false
-      // this.select = key
-      // this.$emit('input', key)
     }
-  },
-  created () {
-    let a = this.list
-    console.log(a)
   }
 }
 </script>
@@ -56,6 +38,7 @@ export default {
   .input{
     cursor: pointer;
     user-select: none;
+    margin-bottom: 4px;
     p{
       display: inline-block;
       box-sizing: border-box;
@@ -89,41 +72,6 @@ export default {
     .active{
       border-color: #409eff;
     }
-  }
-  .cascaderbox{
-    position: absolute;
-    width: 100px;
-    left: 0;
-    top: 30px;
-    z-index: 20;
-    box-sizing: border-box;
-    background-color: #fff;
-    border-radius: 2px;
-    border: 1px solid #ccc;
-    padding: 4px 0;
-    .li{
-      font-size: 12px;
-      padding: 6px 6px;
-      cursor: pointer;
-      i{
-        float: right;
-      }
-      &:hover{
-        background-color: #f5f5f5;
-      }
-    }
-  }
-}
-@for $n from 0 through 10 {
-  .lev-#{$n} {
-    width: 100%;
-    position: absolute;
-    top: -1px;
-    left: 100% * $n;
-    background-color: #fff;
-    box-sizing: border-box;
-    border-radius: 2px;
-    border: 1px solid #ccc;
   }
 }
 </style>

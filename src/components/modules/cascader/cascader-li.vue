@@ -1,58 +1,59 @@
 <template>
-  <div class="cascader-li">
-    <div class="cascaderbox" v-for="li in cascader" :key="li.index">
-      <div :class="['lev-'+ li.indent]">
-        <div class="li" v-for="li in li" :key="li.index">
-          <span>{{li.label}}</span>
-          <i class="fa fa-angle-right"></i>
-        </div>
+  <div class="cascader-li" v-if="cascader">
+    <div class="box">
+      <div class="li" v-for="(li,index) in cascader" :key="li.index" @click="select(index)">
+        <span>{{li.label}}</span>
+        <i class="fa fa-angle-right" v-if="li.children"></i>
       </div>
-      <cascader :cascader="li.children"></cascader>
     </div>
+    <cascader-li v-for="li in cascader" :key="li.index" :cascader='li.children' class="children" v-if="li.select"></cascader-li>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'cascader',
-  props: ['cascader']
+  name: 'cascaderLi',
+  props: ['cascader'],
+  methods: {
+    select (key) {
+      let list = this.cascader
+      list[key].select = !list[key].select
+      console.log(list[key].label)
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .cascader-li{
-  position: absolute;
+  position: relative;
   width: 100px;
-  left: 0;
-  top: 30px;
-  z-index: 20;
   box-sizing: border-box;
+}
+.box{
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #eee;
   background-color: #fff;
-  border-radius: 2px;
-  border: 1px solid #ccc;
-  padding: 4px 0;
   .li{
     font-size: 12px;
-    padding: 6px 6px;
+    padding: 6px;
     cursor: pointer;
-    i{
-      float: right;
-    }
+    user-select: none;
     &:hover{
       background-color: #f5f5f5;
     }
-  }
-  @for $n from 0 through 10 {
-  .lev-#{$n} {
-    width: 100%;
-    position: absolute;
-    top: -1px;
-    left: 100% * $n;
-    background-color: #fff;
-    box-sizing: border-box;
-    border-radius: 2px;
-    border: 1px solid #ccc;
+    i{
+      float: right;
+    }
   }
 }
+.children{
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: -1px;
 }
 </style>

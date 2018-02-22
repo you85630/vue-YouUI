@@ -3,6 +3,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const login = () => import('views/login')
+const notfound = () => import('views/notfound')
 const home = () => import('views/home')
 
 const Switch = () => import('components/psges/switch')
@@ -30,6 +31,11 @@ const router = new Router({
       path: '/login',
       name: 'login',
       component: login
+    },
+    {
+      path: '*',
+      name: 'notfound',
+      component: notfound
     },
     {
       path: '/home',

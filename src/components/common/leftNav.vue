@@ -3,8 +3,10 @@
     <div class="logo">
       <router-link to="/">Vue组件库</router-link>
     </div>
-    <div class="li" v-for="li in leftNav" :key="li.index">
-      <router-link :to="li.linkto">{{li.name}}</router-link>
+    <div class="list">
+      <p v-for="li in leftNav" :key="li.index">
+        <router-link :to="li.linkto">{{li.name}}</router-link>
+      </p>
     </div>
   </div>
 </template>
@@ -23,25 +25,32 @@ export default {
 <style lang="scss" scoped>
 .left-nav {
   width: 200px;
-  padding: 10px;
+  padding: 0 10px;
   box-sizing: border-box;
   background-color: #fff;
   user-select: none;
-  .li {
-    padding: 10px 0;
-    a {
-      font-size: 14px;
-      display: block;
-    }
-    .router-link-exact-active,
-    .router-link-active {
-      color: #409eff;
+  .list {
+    overflow-y: auto;
+    height: 90%;
+    p{
+      padding: 10px 0;
+      a {
+        font-size: 14px;
+        display: block;
+      }
+      .router-link-exact-active,
+      .router-link-active {
+        color: #409eff;
+      }
     }
   }
 }
 .logo {
   font-size: 20px;
-  padding: 20px;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: 1px solid #eee;
   cursor: pointer;
   a {

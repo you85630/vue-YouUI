@@ -1,28 +1,39 @@
 <template>
   <div class="home">
-    <left-nav></left-nav>
-    <div class="right">
-      <transition nane="slide-fade" mode="out-in">
-        <keep-alive>
-          <router-view></router-view>
-        </keep-alive>
-      </transition>
+    <top-nav></top-nav>
+    <div class="main">
+      <left-nav></left-nav>
+      <div class="right">
+        <transition nane="slide-fade" mode="out-in">
+          <keep-alive>
+            <router-view></router-view>
+          </keep-alive>
+        </transition>
+      </div>
     </div>
+    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
+import topNav from 'components/common/topnav'
+import myFooter from 'components/common/footer'
 import leftNav from 'components/common/leftNav'
 export default {
   components: {
-    leftNav
+    topNav,
+    leftNav,
+    myFooter
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.home {
+.home{
   height: 100%;
+}
+.main {
+  height: 90%;
   display: flex;
   .right {
     width: 100%;

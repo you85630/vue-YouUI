@@ -27,11 +27,6 @@ export default {
       this.now.width = (offLeft * 100).toFixed(2) + '%'
       this.$emit('input', this.now.width)
     }
-  },
-  watch: {
-    'value': (val) => {
-      console.log(val)
-    }
   }
 }
 </script>

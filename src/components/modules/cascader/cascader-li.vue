@@ -20,7 +20,7 @@ export default {
       for (let i = 0; i < list.length; i++) {
         let element = list[i]
         if (i === key) {
-          list[key].select = !list[key].select
+          list[i].select = !list[i].select
           if (!element.children) {
             let val = element.label
             this.$emit('input', val)

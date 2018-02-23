@@ -12,7 +12,7 @@
           <input type="text" placeholder="请输入密码">
         </p>
         <p>
-          <router-link to="/home">登录</router-link>
+          <router-link to="/home/index">登录</router-link>
         </p>
       </div>
     </div>

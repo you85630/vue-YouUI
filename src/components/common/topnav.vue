@@ -2,7 +2,9 @@
   <div class="top-nav">
     <ul>
       <li>小明</li>
-      <li>退出</li>
+      <li>
+         <router-link to="/login">退出</router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -34,6 +36,9 @@ export default {
         border: none;
         padding-right: 0;
         margin-right: 0;
+      }
+      a{
+        color: #fff;
       }
     }
   }

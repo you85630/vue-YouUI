@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="casc">
     <my-cascader v-model="select" :list='selectList'></my-cascader>
-    <my-tips :list="tableList"></my-tips>
+    <!-- <my-tips :list="tableList"></my-tips> -->
   </div>
 </template>
 
 <script>
-import myCascader from 'components/modules/cascader'
+import myCascader from 'components/modules/cascader/cascader'
 import myTips from 'components/common/tips'
 
 export default {
@@ -16,7 +16,7 @@ export default {
   },
   data () {
     return {
-      select: '',
+      select: [],
       selectList: [{
         label: '北京',
         select: false,
@@ -56,8 +56,14 @@ export default {
       tableList: [
         {
           name: 'value',
-          explain: '指定当前滑块的数据。可以使用 v-model 双向绑定数据',
+          explain: '指定当前数据。可以使用 v-model 双向绑定数据',
           types: 'Number',
+          default: '-'
+        },
+        {
+          name: 'class',
+          explain: '指定当前组件的class',
+          types: 'String',
           default: '-'
         }
       ]
@@ -67,6 +73,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.casc{
+  width: 300px;
+}
 .tips{
   margin-top: 20px;
 }

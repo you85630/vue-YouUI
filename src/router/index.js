@@ -6,6 +6,7 @@ const login = () => import('views/login')
 const notfound = () => import('views/notfound')
 const home = () => import('views/home')
 
+const index = () => import('components/psges/index')
 const Switch = () => import('components/psges/switch')
 const button = () => import('components/psges/button')
 const datePicker = () => import('components/psges/datePicker')
@@ -25,7 +26,7 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/home/index'
     },
     {
       path: '/login',
@@ -42,6 +43,11 @@ const router = new Router({
       name: 'home',
       component: home,
       children: [
+        {
+          path: '/home/index',
+          name: 'index',
+          component: index
+        },
         {
           path: '/home/switch',
           name: 'switch',

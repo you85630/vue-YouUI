@@ -1,5 +1,5 @@
 <template>
-  <div :id="echarts.id" class="myChart"></div>
+  <div :id="echartsId" class="myChart"></div>
 </template>
 
 <script>
@@ -8,6 +8,7 @@ export default {
   data () {
     return {
       data: {
+        echartsId: '',
         line: {
           xAxis: {
             type: 'category',
@@ -120,6 +121,9 @@ export default {
       }
     }
   },
+  created () {
+    this.echartsId = Math.random().toString(36).substr(2)
+  },
   mounted () {
     this.$nextTick(function () {
       this.colours(this.echarts.type)
@@ -140,7 +144,7 @@ export default {
       if (types === 'radar') {
         option = this.data.radar
       }
-      this.$echarts.init(document.getElementById(this.echarts.id)).setOption(option)
+      this.$echarts.init(document.getElementById(this.echartsId)).setOption(option)
     }
   }
 }

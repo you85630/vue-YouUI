@@ -31,7 +31,6 @@ export default {
   data () {
     return {
       linelist: {
-        id: '222',
         type: 'line',
         option: {
           title: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -39,7 +38,6 @@ export default {
         }
       },
       barlist: {
-        id: '111',
         type: 'bar',
         option: {
           title: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -47,7 +45,6 @@ export default {
         }
       },
       pielist: {
-        id: '333',
         type: 'pie',
         option: {
           title: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎'],
@@ -61,7 +58,6 @@ export default {
         }
       },
       radarlist: {
-        id: '444',
         type: 'radar',
         option: {
           title: [
@@ -101,11 +97,6 @@ export default {
       // 组件说明
       tableList: [
         {
-          name: 'id',
-          explain: 'echarts的id',
-          types: 'String',
-          default: '_'
-        }, {
           name: 'types',
           explain: 'echarts的类型',
           types: 'String',

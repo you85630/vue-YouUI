@@ -40,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 .cascader{
   position: relative;
-  width: 100%;
+  width: 100px;
   .input{
     cursor: pointer;
     user-select: none;

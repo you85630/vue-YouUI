@@ -1,7 +1,8 @@
 <template>
   <div class="casc">
+    <p class="msg">尚未完善</p>
     <my-cascader v-model="select" :list='selectList'></my-cascader>
-    <!-- <my-tips :list="tableList"></my-tips> -->
+    <my-tips :list="tableList"></my-tips>
   </div>
 </template>
 
@@ -61,9 +62,9 @@ export default {
           default: '-'
         },
         {
-          name: 'class',
-          explain: '指定当前组件的class',
-          types: 'String',
+          name: 'list',
+          explain: '指定当前组件的数据',
+          types: 'Array',
           default: '-'
         }
       ]
@@ -73,10 +74,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.casc{
-  width: 300px;
+.msg{
+  font-size: 30px;
+  color: #f00;
+  margin-bottom: 10px;
 }
 .tips{
-  margin-top: 20px;
+  margin-top: 100px;
 }
 </style>

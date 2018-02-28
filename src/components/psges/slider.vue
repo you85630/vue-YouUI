@@ -1,6 +1,7 @@
 <template>
   <div>
     <my-slider v-model="pwidth"></my-slider>
+    <p>{{pwidth}}</p>
 
     <my-tips :list="tableList"></my-tips>
   </div>
@@ -32,6 +33,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+p{
+  font-size: 14px;
+  margin-top: 10px;
+}
 .tips{
   margin-top: 20px;
 }

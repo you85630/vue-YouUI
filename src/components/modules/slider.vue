@@ -17,15 +17,17 @@ export default {
       let wid = this.$el.scrollWidth
       let disX = el.clientX - this.$el.offsetLeft
       let offLeft = disX / wid
-      this.now.width = (offLeft * 100).toFixed(2) + '%'
-      this.$emit('input', this.now.width)
+      let here = (offLeft * 100).toFixed(2)
+      this.now.width = here + '%'
+      this.$emit('input', here)
     },
     hover (el) {
       let wid = this.$el.scrollWidth
       let disX = el.clientX - this.$el.offsetLeft
       let offLeft = disX / wid
-      this.now.width = (offLeft * 100).toFixed(2) + '%'
-      this.$emit('input', this.now.width)
+      let here = (offLeft * 100).toFixed(2)
+      this.now.width = here + '%'
+      this.$emit('input', here)
     }
   }
 }

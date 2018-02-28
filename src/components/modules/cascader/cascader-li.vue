@@ -1,7 +1,7 @@
 <template>
   <div class="cascader-li" v-if="cascader">
     <div class="box">
-      <div class="li" v-for="(li,index) in cascader" :key="li.index" :class="{active:li.select}" @click="select(index)">
+      <div class="li" v-for="(li,index) in cascader" :key="li.index" :class="{active:li.select}" @click="select(index,li)">
         <span>{{li.label}}</span>
         <i class="fa fa-angle-right" v-if="li.children"></i>
       </div>
@@ -13,18 +13,21 @@
 <script>
 export default {
   name: 'cascaderLi',
-  props: ['cascader'],
+  props: ['cascader', 'nowLi'],
+  data () {
+    return {
+      li: this.nowLi
+    }
+  },
   methods: {
-    select (key) {
+    select (key, name) {
+      this.li = name.label
+      this.$emit('input', this.li)
       let list = this.cascader
       for (let i = 0; i < list.length; i++) {
         let element = list[i]
         if (i === key) {
           list[i].select = !list[i].select
-          if (!element.children) {
-            let val = element.label
-            this.$emit('input', val)
-          }
         } else {
           element.select = false
         }
@@ -37,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 .cascader-li{
   position: relative;
-  width: 100px;
+  width: 100%;
   box-sizing: border-box;
 }
 .box{

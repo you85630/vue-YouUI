@@ -60,6 +60,10 @@ export default new Vuex.Store({
       {
         name: '滑块',
         linkto: '/home/slider'
+      },
+      {
+        name: '评分',
+        linkto: '/home/rate'
       }
     ]
   },

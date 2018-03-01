@@ -37,7 +37,7 @@ export default {
 .slider{
     position: relative;
     width: 100%;
-    height: 5px;
+    height: 6px;
     border-radius: 4px;
     background-color: #eee;
     cursor: pointer;
@@ -46,7 +46,7 @@ export default {
       left: 0;
       display: inline-block;
       width: 0%;
-      height: 5px;
+      height: 100%;
       border-radius: 4px;
       background: #3c9ffc;
       em{
@@ -54,8 +54,8 @@ export default {
         top: -4px;
         left: 100%;
         margin-left: -10px;
-        width: 8px;
-        height: 8px;
+        width: 10px;
+        height: 10px;
         border: 2px solid #3c9ffc;
         border-radius: 50px;
         background-color: #fff;

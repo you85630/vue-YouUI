@@ -14,7 +14,6 @@ const upLoad = () => import('components/psges/upLoad')
 const radioBox = () => import('components/psges/radioBox')
 const checkBox = () => import('components/psges/checkBox')
 const select = () => import('components/psges/select')
-const cascader = () => import('components/psges/cascader')
 const alertBox = () => import('components/psges/alertBox')
 const tabs = () => import('components/psges/tabs')
 const tree = () => import('components/psges/tree')
@@ -22,6 +21,7 @@ const table = () => import('components/psges/table')
 const echarts = () => import('components/psges/echarts')
 const slider = () => import('components/psges/slider')
 const rate = () => import('components/psges/rate')
+const cascader = () => import('components/psges/cascader')
 
 const router = new Router({
   routes: [
@@ -85,11 +85,6 @@ const router = new Router({
           component: select
         },
         {
-          path: '/home/cascader',
-          name: 'cascader',
-          component: cascader
-        },
-        {
           path: '/home/alertBox',
           name: 'alertBox',
           component: alertBox
@@ -123,6 +118,11 @@ const router = new Router({
           path: '/home/rate',
           name: 'rate',
           component: rate
+        },
+        {
+          path: '/home/cascader',
+          name: 'cascader',
+          component: cascader
         }
       ]
     }

@@ -1,8 +1,7 @@
 # vue-YouUI
 
-> A Vue.js project
+> 简单集成一个 UI 组件库
 
-简单集成一个 UI 组件库
 * 开关
 * 按钮
 * 单选框

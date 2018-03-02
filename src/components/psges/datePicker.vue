@@ -18,7 +18,7 @@ export default {
   },
   data () {
     return {
-      time: '2018-1-23',
+      time: '',
       tableList: [
         {
           name: 'value',

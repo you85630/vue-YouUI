@@ -8,7 +8,7 @@
       </p>
     </div>
     <div class="box" v-if="show">
-      <div class="have">{{select}}</div>
+      <div class="back">已选择：<span v-for="li in have" :key="li.index">{{li}}</span></div>
       <div class="li" v-for="(li,index) in listNow" :key="li.index" @click="selectNow(index)">
         <span>{{li.label}}</span>
         <i class="fa fa-angle-right" v-if="li.children"></i>
@@ -24,7 +24,8 @@ export default {
     return {
       select: this.value,
       show: false,
-      cascaderList: this.list
+      cascaderList: this.list,
+      have: []
     }
   },
   methods: {
@@ -32,14 +33,19 @@ export default {
       this.show = !this.show
     },
     selectNow (key) {
-      console.log(key)
       let list = this.listNow
       for (let i = 0; i < list.length; i++) {
         const element = list[i]
         if (key === i) {
+          let name
           if (element.children) {
             this.cascaderList = element.children
+            name = element.label
+          } else {
+            // 这里需要做个判断
+            name = element.label
           }
+          this.have.push(name)
         }
       }
     }
@@ -61,7 +67,8 @@ export default {
 <style lang="scss" scoped>
 .cascader{
   position: relative;
-  width: 100px;
+  width: 300px;
+  box-sizing: border-box;
   .input{
     cursor: pointer;
     user-select: none;
@@ -71,7 +78,7 @@ export default {
       display: inline-block;
       box-sizing: border-box;
       width: 100%;
-      padding: 6px 15px;
+      padding: 8px 15px;
       border-radius: 2px;
       border: 1px solid #ccc;
       font-size: 0;
@@ -108,9 +115,28 @@ export default {
     box-sizing: border-box;
     border: 1px solid #eee;
     background-color: #fff;
+    .back{
+      padding: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      span{
+        color: #409eff;
+        &:last-child{
+          &::after{
+            content: '';
+            margin: 0;
+          }
+        }
+        &::after{
+          content: '/';
+          color: #000;
+          margin: 0 4px;
+        }
+      }
+    }
     .li{
-      font-size: 12px;
-      padding: 6px;
+      font-size: 14px;
+      padding: 8px;
       cursor: pointer;
       user-select: none;
       &:hover{

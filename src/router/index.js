@@ -23,6 +23,7 @@ const slider = () => import('components/psges/slider')
 const rate = () => import('components/psges/rate')
 const cascader = () => import('components/psges/cascader')
 const card = () => import('components/psges/card')
+const notice = () => import('components/psges/notice')
 
 const router = new Router({
   routes: [
@@ -129,6 +130,11 @@ const router = new Router({
           path: '/home/card',
           name: 'card',
           component: card
+        },
+        {
+          path: '/home/notice',
+          name: 'notice',
+          component: notice
         }
       ]
     }

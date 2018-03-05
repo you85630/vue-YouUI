@@ -11,9 +11,13 @@ import 'assets/css/reset.css'
 import 'assets/css/animate.css'
 // 引入fontawesome
 import 'font-awesome/css/font-awesome.css'
+// 引入全局函数
+import notice from 'components/modules/notice'
 // 引入echarts
 import echarts from 'echarts'
+
 Vue.prototype.$echarts = echarts
+Vue.prototype.$notice = notice
 
 Vue.config.productionTip = false
 

@@ -44,4 +44,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.button-box{
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: top;
+}
 </style>

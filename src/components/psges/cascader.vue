@@ -1,13 +1,12 @@
 <template>
   <div class="casc">
-    <p class="msg">尚未完善</p>
     <my-cascader v-model="select" :list='selectList'></my-cascader>
     <my-tips :list="tableList"></my-tips>
   </div>
 </template>
 
 <script>
-import myCascader from 'components/modules/cascader/cascader'
+import myCascader from 'components/modules/cascader'
 import myTips from 'components/common/tips'
 
 export default {
@@ -74,11 +73,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.msg{
-  font-size: 30px;
-  color: #f00;
-  margin-bottom: 10px;
-}
 .tips{
   margin-top: 100px;
 }

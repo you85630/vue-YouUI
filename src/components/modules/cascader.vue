@@ -7,31 +7,52 @@
         <i class="fa" :class="show?'fa-caret-up':'fa-caret-down'"></i>
       </p>
     </div>
-    <cascader-li :cascader="list"  v-if="show" v-model="select"></cascader-li>
+    <div class="box" v-if="show">
+      <div class="have">{{select}}</div>
+      <div class="li" v-for="(li,index) in listNow" :key="li.index" @click="selectNow(index)">
+        <span>{{li.label}}</span>
+        <i class="fa fa-angle-right" v-if="li.children"></i>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import cascaderLi from 'components/modules/cascader/cascader-li'
 export default {
   props: ['value', 'list'],
-  components: {
-    cascaderLi
-  },
   data () {
     return {
       select: this.value,
-      show: false
+      show: false,
+      cascaderList: this.list
     }
   },
   methods: {
     changInput () {
       this.show = !this.show
+    },
+    selectNow (key) {
+      console.log(key)
+      let list = this.listNow
+      for (let i = 0; i < list.length; i++) {
+        const element = list[i]
+        if (key === i) {
+          if (element.children) {
+            this.cascaderList = element.children
+          }
+        }
+      }
     }
   },
-  watch: {
-    'select': (val) => {
-      console.log(val)
+  computed: {
+    'listNow': function () {
+      let list = []
+      let now = this.cascaderList
+      for (let i = 0; i < now.length; i++) {
+        const element = now[i]
+        list.push(element)
+      }
+      return list
     }
   }
 }
@@ -78,6 +99,26 @@ export default {
     }
     .active{
       border-color: #409eff;
+    }
+  }
+  .box{
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    background-color: #fff;
+    .li{
+      font-size: 12px;
+      padding: 6px;
+      cursor: pointer;
+      user-select: none;
+      &:hover{
+        background-color: #f5f5f5;
+      }
+      i{
+        float: right;
+      }
     }
   }
 }

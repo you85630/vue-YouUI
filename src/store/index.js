@@ -58,6 +58,10 @@ export default new Vuex.Store({
         linkto: '/home/slider'
       },
       {
+        name: '进度条',
+        linkto: '/home/progress'
+      },
+      {
         name: '评分',
         linkto: '/home/rate'
       },

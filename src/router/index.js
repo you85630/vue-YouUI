@@ -20,6 +20,7 @@ const tree = () => import('components/psges/tree')
 const table = () => import('components/psges/table')
 const echarts = () => import('components/psges/echarts')
 const slider = () => import('components/psges/slider')
+const progress = () => import('components/psges/progress')
 const rate = () => import('components/psges/rate')
 const cascader = () => import('components/psges/cascader')
 const card = () => import('components/psges/card')
@@ -115,6 +116,11 @@ const router = new Router({
           path: '/home/slider',
           name: 'slider',
           component: slider
+        },
+        {
+          path: '/home/progress',
+          name: 'progress',
+          component: progress
         },
         {
           path: '/home/rate',

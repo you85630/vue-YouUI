@@ -17,26 +17,26 @@ export default {
   methods: {
     primary () {
       this.$notice.primary({
-        title: '标题',
-        desc: '内容部分'
+        title: '默认标题默认标题默认标题默认标题默认标题默认标题默认标题默认标题',
+        desc: '默认内容部分默认内容部分默认内容部分默认内容部分默认内容部分默认内容部分默认内容部分默认内容部分默认内容部分默认内容部分默认内容部分默认内容部分'
       })
     },
     success () {
       this.$notice.success({
-        title: '标题',
-        desc: '内容部分'
+        title: '成功标题',
+        desc: '成功内容部分'
       })
     },
     warning () {
       this.$notice.warning({
-        title: '标题',
-        desc: '内容部分'
+        title: '警告标题',
+        desc: '警告内容部分'
       })
     },
     error () {
       this.$notice.error({
-        title: '标题',
-        desc: '内容部分'
+        title: '错误标题',
+        desc: '错误内容部分'
       })
     }
   }

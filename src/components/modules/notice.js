@@ -1,47 +1,66 @@
 var notice = {
   primary (e) {
     let parent = document.createElement('div')
+    parent.setAttribute('class', 'alert-notice')
+    parent.setAttribute('id', 'alert-notice')
     document.body.appendChild(parent)
-
     parent.innerHTML =
-      '<div class="alert-notice primary"><i class="alert-remove" onclick="alertRemove()">&times;</i><p class="notice-title"><i class="fa fa-exclamation-circle"></i>' +
+      '<div class="primary"><i class="alert-remove" id="remove">&times;</i><p class="notice-title"><i class="fa fa-exclamation-circle"></i><span>' +
       e.title +
-      '</p><p class="notice-desc">' +
+      '</span></p><p class="notice-desc">' +
       e.desc +
       '</p></div>'
+    document.getElementById('remove').onclick = function () {
+      document.getElementById('alert-notice').remove()
+    }
   },
   success (e) {
     let parent = document.createElement('div')
+    parent.setAttribute('class', 'alert-notice')
+    parent.setAttribute('id', 'alert-notice')
     document.body.appendChild(parent)
 
     parent.innerHTML =
-      '<div class="alert-notice success"><i class="alert-remove" onclick="alertRemove()">&times;</i><p class="notice-title"><i class="fa fa-exclamation-circle"></i>' +
+      '<div class="success"><i class="alert-remove" id="remove">&times;</i><p class="notice-title"><i class="fa fa-exclamation-circle"></i><span>' +
       e.title +
-      '</p><p class="notice-desc">' +
+      '</span></p><p class="notice-desc">' +
       e.desc +
       '</p></div>'
+    document.getElementById('remove').onclick = function () {
+      document.getElementById('alert-notice').remove()
+    }
   },
   warning (e) {
     let parent = document.createElement('div')
+    parent.setAttribute('class', 'alert-notice')
+    parent.setAttribute('id', 'alert-notice')
     document.body.appendChild(parent)
 
     parent.innerHTML =
-      '<div class="alert-notice warning"><i class="alert-remove" onclick="alertRemove()">&times;</i><p class="notice-title"><i class="fa fa-exclamation-circle"></i>' +
+      '<div class="warning"><i class="alert-remove" id="remove">&times;</i><p class="notice-title"><i class="fa fa-exclamation-circle"></i><span>' +
       e.title +
-      '</p><p class="notice-desc">' +
+      '</span></p><p class="notice-desc">' +
       e.desc +
       '</p></div>'
+    document.getElementById('remove').onclick = function () {
+      document.getElementById('alert-notice').remove()
+    }
   },
   error (e) {
     let parent = document.createElement('div')
+    parent.setAttribute('class', 'alert-notice')
+    parent.setAttribute('id', 'alert-notice')
     document.body.appendChild(parent)
 
     parent.innerHTML =
-      '<div class="alert-notice error"><i class="alert-remove" onclick="alertRemove()">&times;</i><p class="notice-title"><i class="fa fa-exclamation-circle"></i>' +
+      '<div class="error"><i class="alert-remove" id="remove">&times;</i><p class="notice-title"><i class="fa fa-exclamation-circle"></i><span>' +
       e.title +
-      '</p><p class="notice-desc">' +
+      '</span></p><p class="notice-desc">' +
       e.desc +
       '</p></div>'
+    document.getElementById('remove').onclick = function () {
+      document.getElementById('alert-notice').remove()
+    }
   }
 }
 export default notice

@@ -173,10 +173,17 @@ body {
     padding-bottom: 10px;
     font-weight: bold;
     font-size: 14px;
+    i,
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
     i {
       margin-right: 10px;
-      vertical-align: middle;
       font-size: 20px;
+    }
+    span {
+      width: 230px;
     }
   }
   .notice-desc {

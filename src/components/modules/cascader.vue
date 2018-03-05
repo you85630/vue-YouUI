@@ -1,11 +1,9 @@
 <template>
   <div class="cascader">
-    <div class="input">
-      <p @click="changInput" :class="{active:show}">
-        <span v-if="!select.length">请选择</span>
-        <span class="now" v-else>{{select}}</span>
-        <i class="fa" :class="show?'fa-caret-up':'fa-caret-down'"></i>
-      </p>
+    <div class="input" @click="changInput">
+      <p v-if="!select.length">请选择</p>
+      <p class="now" v-else><span v-for="li in select" :key="li.index">{{li}}</span></p>
+      <i class="fa" :class="show?'fa-caret-up':'fa-caret-down'"></i>
     </div>
     <div class="box" v-if="show">
       <div class="back">已选择：<span v-for="li in have" :key="li.index">{{li}}</span></div>
@@ -31,19 +29,21 @@ export default {
   methods: {
     changInput () {
       this.show = !this.show
+      this.select = this.value
+      this.have = []
+      this.cascaderList = this.list
     },
     selectNow (key) {
       let list = this.listNow
       for (let i = 0; i < list.length; i++) {
         const element = list[i]
         if (key === i) {
-          let name
+          let name = element.label
           if (element.children) {
             this.cascaderList = element.children
-            name = element.label
           } else {
-            // 这里需要做个判断
-            name = element.label
+            this.show = !this.show
+            this.select = this.have
           }
           this.have.push(name)
         }
@@ -74,38 +74,46 @@ export default {
     user-select: none;
     margin-bottom: 4px;
     width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 15px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    font-size: 0;
+    &:hover{
+      border-color: #409eff;
+    }
     p{
+      color: #ccc;
+      font-size: 12px;
+      width: 80%;
       display: inline-block;
-      box-sizing: border-box;
-      width: 100%;
-      padding: 8px 15px;
-      border-radius: 2px;
-      border: 1px solid #ccc;
-      font-size: 0;
-      &:hover{
-        border-color: #409eff;
-      }
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .now{
+      color: #000;
       span{
-        color: #ccc;
-        font-size: 12px;
-        width: 80%;
-        display: inline-block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-      .now{
-        color: #000;
-      }
-      i{
-        font-size: 14px;
-        width: 20%;
-        text-align: right;
-        vertical-align: top;
+        &:last-child{
+          &::after{
+            content: '';
+            margin: 0;
+          }
+        }
+        &::after{
+          content: '/';
+          color: #000;
+          margin: 0 4px;
+        }
       }
     }
-    .active{
-      border-color: #409eff;
+    i{
+      font-size: 14px;
+      width: 20%;
+      text-align: right;
+      vertical-align: top;
     }
   }
   .box{

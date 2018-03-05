@@ -168,9 +168,11 @@ body {
     right: 10px;
     font-size: 20px;
     cursor: pointer;
+    &:hover {
+      color: #f00;
+    }
   }
   .notice-title {
-    padding-bottom: 10px;
     font-weight: bold;
     font-size: 14px;
     i,
@@ -187,6 +189,7 @@ body {
     }
   }
   .notice-desc {
+    margin-top: 10px;
     padding-left: 30px;
     font-size: 12px;
   }

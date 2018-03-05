@@ -1,5 +1,5 @@
 <template>
-  <div class="slider" @click="slider"><p :style="now"></p></div>
+  <div class="progress"><p :style="now"></p></div>
 </template>
 
 <script>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.slider{
+.progress{
     position: relative;
     width: 100%;
     height: 6px;

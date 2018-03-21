@@ -2,81 +2,109 @@
   <div class="login">
     <div class="card">
       <div class="title">登录</div>
-      <div class="form">
-        <p>
+      <ul class="form">
+        <li>
           <i class="fa fa-user-circle-o"></i>
-          <input type="text" placeholder="请输入账号">
-        </p>
-        <p>
+          <input type="text" placeholder="请输入账号" v-model="account.userName">
+        </li>
+        <li>
           <i class="fa fa-unlock-alt"></i>
-          <input type="text" placeholder="请输入密码">
-        </p>
-        <p>
-          <router-link to="/home/index">登录</router-link>
-        </p>
-      </div>
+          <input type="text" placeholder="请输入密码" v-model="account.passWord">
+        </li>
+        <li class="goto">
+          <a @click="login(account)">登录</a>
+          <p v-if="errorMsg"><i class="fa fa-exclamation-circle"></i>{{errorMsg}}</p>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
-
+  computed: {
+    ...mapGetters([
+      'account',
+      'errorMsg'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'login'
+    ])
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .login {
-  height: 100%;
   width: 100%;
-  background: url('../assets/img/bg-pic.jpg') 0 0 no-repeat;
+  height: 100%;
+  background-color: #3C3C3C;
   background-size: cover;
 }
 .card{
-  background-color: rgba(255, 255, 255,.6);
   position: absolute;
-  left: 35%;
   top: 20vh;
-  width: 30%;
-  padding: 40px;
-  border-radius: 2px;
+  left: 35%;
   box-sizing: border-box;
+  padding: 40px;
+  min-width: 400px;
+  width: 30%;
+  border-radius: 2px;
+  background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0,.6);
 }
 .title{
-  font-size: 20px;
   text-align: center;
+  font-size: 20px;
 }
 .form{
-  p{
+  padding: 0 10%;
+  li{
     margin-top: 40px;
-    padding: 0 10%;
+    background-color: #eee;
     text-align: center;
     i,input{
       vertical-align: middle;
     }
     i{
       width: 10%;
-      font-size: 20px;
       text-align: center;
-      margin-right: 2%;
+      font-size: 20px;
     }
     input{
-      font-size: 14px;
-      padding: 8px;
-      width: 88%;
       box-sizing: border-box;
+      padding: 10px 8px;
+      width: 88%;
       border: none;
-      background-color: #eee;
       border-radius: 2px;
+      background-color: #eee;
+      font-size: 14px;
     }
     a{
-      font-size: 18px;
+      display: block;
+      padding: 8px 0;
+      border-radius: 2px;
       background-color:#409eff;
       color:#fff;
-      display: block;
-      padding: 6px 0;
-      border-radius: 2px;
+      font-size: 18px;
+    }
+  }
+  .goto{
+    position: relative;
+    background-color: #fff;
+    p{
+      position: absolute;
+      bottom: -30px;
+      width: 100%;
+      font-size: 12px;
+      color: #f00;
+      .fa{
+        font-size: 14px;
+        vertical-align: middle;
+      }
     }
   }
 }

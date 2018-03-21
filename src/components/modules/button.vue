@@ -41,6 +41,17 @@ button{
     color: #fff;
   }
 }
+.none{
+  border-color: #ccc;
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #fff;
+  &:hover{
+    border-color: #ccc;
+    background-color: #ccc;
+    color: #fff;
+  }
+}
 .success{
   border-color: #19be6b;
   background-color: #19be6b;

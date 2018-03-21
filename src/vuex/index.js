@@ -1,9 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import router from './../router'
 
 Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
+    // 登录
+    account: {},
+    // 登录错误提示
+    errorMsg: '',
+    // 左导航
     leftNav: [
       {
         name: '开关',
@@ -80,8 +86,29 @@ export default new Vuex.Store({
     ]
   },
   getters: {
+    // 登录
+    account: (state) => state.account,
+    // 登录错误提示
+    errorMsg: (state) => state.errorMsg,
+    // 左导航
     leftNav: (state) => state.leftNav
   },
-  actions: {},
-  mutations: {}
+  actions: {
+    // 登录
+    login: ({ commit }, key) => commit('login', key),
+    // 登出
+    exit: ({ commit }) => commit('exit')
+  },
+  mutations: {
+    // 登录
+    login: (state, key) => {
+      console.log(key)
+      router.push('/home/index')
+    },
+    // 登出
+    exit: (state) => {
+      localStorage.clear()
+      router.push('/login')
+    }
+  }
 })

@@ -4,7 +4,7 @@ import App from './App'
 // 引入路由
 import router from './router'
 // 引入vuex
-import store from './store'
+import store from './vuex'
 // 重置全局样式
 import 'assets/css/reset.css'
 // 引入动画样式

@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer-nav">
     <p>
       &copy;&nbsp;2017&nbsp;-&nbsp;{{year}}
     </p>
@@ -20,14 +20,17 @@ export default {
 }
 </script>
 
-.<style lang="scss" scoped>
-.footer{
-  font-size: 12px;
-  text-align: center;
-  background-color: #eee;
-  height: 5%;
+<style lang="scss" scoped>
+.footer-nav{
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 5%;
+  background-color: #fff;
+  text-align: center;
+  p{
+    color: #999;
+    font-size: 12px;
+  }
 }
 </style>

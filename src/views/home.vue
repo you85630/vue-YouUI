@@ -2,23 +2,27 @@
   <div class="home">
     <top-nav></top-nav>
     <div class="main">
-      <left-nav></left-nav>
+      <div class="left">
+        <left-nav></left-nav>
+      </div>
       <div class="right">
-        <transition nane="slide-fade" mode="out-in">
-          <keep-alive>
-            <router-view></router-view>
-          </keep-alive>
-        </transition>
+        <div class="right-main">
+          <transition name="slide-fade" mode="out-in">
+            <keep-alive>
+              <router-view></router-view>
+            </keep-alive>
+          </transition>
+        </div>
+        <my-footer></my-footer>
       </div>
     </div>
-    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
 import topNav from 'components/common/topnav'
+import leftNav from 'components/common/leftnav'
 import myFooter from 'components/common/footer'
-import leftNav from 'components/common/leftNav'
 export default {
   components: {
     topNav,
@@ -33,14 +37,24 @@ export default {
   height: 100%;
 }
 .main {
-  height: 90%;
   display: flex;
+  overflow: hidden;
+  height: 95%;
+  .left{
+    max-width: 300px;
+    width: 20%;
+    background-color: #fff;
+  }
   .right {
     width: 100%;
-    margin: 10px;
-    padding: 10px;
-    background-color: #fff;
-    overflow-y: auto;
+    .right-main{
+      overflow-y: auto;
+      box-sizing: border-box;
+      margin: 10px;
+      padding: 10px;
+      height: 93%;
+      background-color: #fff;
+    }
   }
 }
 .slide-fade-enter-active {
@@ -53,7 +67,7 @@ export default {
 
 .slide-fade-enter,
 .slide-fade-leave-active {
-  transform: translateX(10px);
   opacity: 0;
+  transform: translateX(10px);
 }
 </style>

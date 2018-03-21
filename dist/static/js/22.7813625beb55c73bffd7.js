@@ -1,0 +1,1 @@
+webpackJsonp([22],{"4EVg":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var a={render:function(){var e=this,t=e.$createElement;return(e._self._c||t)("div",{staticClass:"index"},[e._v("\n  啦啦啦，这里是首页\n")])},staticRenderFns:[]};var i=n("VU/8")({},a,!1,function(e){n("etoi")},"data-v-07034abb",null);t.default=i.exports},etoi:function(e,t){}});

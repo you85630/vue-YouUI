@@ -8,8 +8,8 @@ export default {
   data () {
     return {
       data: {
-        echartsId: '',
         line: {
+          animation: false,
           xAxis: {
             type: 'category',
             data: this.echarts.option.title
@@ -23,6 +23,7 @@ export default {
           }]
         },
         bar: {
+          animation: false,
           color: ['#3398DB'],
           tooltip: {
             trigger: 'axis',
@@ -60,6 +61,7 @@ export default {
           ]
         },
         pie: {
+          animation: false,
           tooltip: {
             trigger: 'item',
             formatter: '{b}: {c} ({d}%)'
@@ -98,6 +100,7 @@ export default {
           ]
         },
         radar: {
+          animation: false,
           legend: {
             data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
           },

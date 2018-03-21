@@ -31,7 +31,7 @@ export default {
         display: block;
         padding: 10px 20px;
         color: #fff;
-        font-size: 16px;
+        font-size: 14px;
       }
       .router-link-exact-active,
       .router-link-active{

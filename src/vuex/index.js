@@ -103,6 +103,7 @@ export default new Vuex.Store({
     // 登录
     login: (state, key) => {
       console.log(key)
+      state.account = {}
       router.push('/home/index')
     },
     // 登出

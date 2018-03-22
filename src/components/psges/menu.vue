@@ -1,14 +1,18 @@
 <template>
   <div>
     <my-menu :menu="list"></my-menu>
+
+    <my-tips :list="tableList"></my-tips>
   </div>
 </template>
 
 <script>
 import myMenu from 'components/modules/menu'
+import myTips from 'components/common/tips'
 export default {
   components: {
-    myMenu
+    myMenu,
+    myTips
   },
   data () {
     return {
@@ -39,6 +43,14 @@ export default {
             }
           ]
         }
+      ],
+      tableList: [
+        {
+          name: 'menu',
+          explain: '指定当前组件的数据',
+          types: 'Array',
+          default: '-'
+        }
       ]
     }
   }
@@ -46,4 +58,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.tips{
+  margin-top: 20px;
+}
 </style>

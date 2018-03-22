@@ -14,38 +14,7 @@
 
 <script>
 export default {
-  data () {
-    return {
-      menu: [
-        {
-          label: '第一级',
-          openNow: false,
-          children: [
-            {
-              label: '1-1',
-              linkto: '#'
-            }, {
-              label: '1-2',
-              linkto: '/home/menu'
-            }
-          ]
-        },
-        {
-          label: '第二级',
-          openNow: false,
-          children: [
-            {
-              label: '2-1',
-              linkto: '#'
-            }, {
-              label: '2-2',
-              linkto: '#'
-            }
-          ]
-        }
-      ]
-    }
-  },
+  props: ['menu'],
   methods: {
     open (key) {
       this.menu[key].openNow = !this.menu[key].openNow

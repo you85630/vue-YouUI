@@ -23,7 +23,7 @@ export default {
           children: [
             {
               label: '1-1',
-              linkto: '#'
+              linkto: '/home/echarts'
             }, {
               label: '1-2',
               linkto: '/home/menu'
@@ -36,10 +36,10 @@ export default {
           children: [
             {
               label: '2-1',
-              linkto: '#'
+              linkto: '/home/cascader'
             }, {
               label: '2-2',
-              linkto: '#'
+              linkto: '/home/datePicker'
             }
           ]
         }

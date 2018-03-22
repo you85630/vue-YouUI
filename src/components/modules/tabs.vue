@@ -86,6 +86,7 @@ export default {
 .tabs-content{
   margin-top: 10px;
   .tabs-content-li{
+    padding: 0 10px;
     font-size: 12px;
   }
 }

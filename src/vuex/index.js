@@ -82,6 +82,10 @@ export default new Vuex.Store({
       {
         name: '级联选择器',
         linkto: '/home/cascader'
+      },
+      {
+        name: '导航菜单',
+        linkto: '/home/menu'
       }
     ]
   },

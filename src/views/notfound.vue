@@ -19,7 +19,7 @@ export default {
   text-align: center;
 }
 .title{
-  padding-top: 24%;
+  padding-top: 18%;
   img{
     width: 300px;
   }

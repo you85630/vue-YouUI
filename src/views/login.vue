@@ -39,15 +39,29 @@ export default {
 
 <style lang="scss" scoped>
 .login {
+  position: relative;
   width: 100%;
   height: 100%;
-  background-color: #3C3C3C;
+  background: url('./../assets/img/bg.jpg') 0 0 no-repeat;
   background-size: cover;
+  background-size: cover;
+  &::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:inherit;
+    content: '';
+    filter: blur(12px);
+    filter:(2px);
+  }
 }
 .card{
   position: absolute;
   top: 20vh;
   left: 35%;
+  z-index: 99999;
   box-sizing: border-box;
   padding: 40px;
   min-width: 400px;
@@ -99,11 +113,11 @@ export default {
       position: absolute;
       bottom: -30px;
       width: 100%;
-      font-size: 12px;
       color: #f00;
+      font-size: 12px;
       .fa{
-        font-size: 14px;
         vertical-align: middle;
+        font-size: 14px;
       }
     }
   }

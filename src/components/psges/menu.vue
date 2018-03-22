@@ -50,6 +50,11 @@ export default {
           explain: '指定当前组件的数据',
           types: 'Array',
           default: '-'
+        }, {
+          name: 'router',
+          explain: '根据路由判断当前展开的父元素',
+          types: '-',
+          default: '-'
         }
       ]
     }

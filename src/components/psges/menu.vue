@@ -3,6 +3,8 @@
     <my-menu :menu="list"></my-menu>
 
     <my-tips :list="tableList"></my-tips>
+    <p>根据路由判断当前展开的父元素</p>
+    <p style="color:red">注：当前页面为静态资源</p>
   </div>
 </template>
 
@@ -50,11 +52,6 @@ export default {
           explain: '指定当前组件的数据',
           types: 'Array',
           default: '-'
-        }, {
-          name: 'router',
-          explain: '根据路由判断当前展开的父元素',
-          types: '-',
-          default: '-'
         }
       ]
     }
@@ -65,5 +62,9 @@ export default {
 <style lang="scss" scoped>
 .tips{
   margin-top: 20px;
+}
+p{
+  margin-top: 20px;
+  font-size: 20px;
 }
 </style>

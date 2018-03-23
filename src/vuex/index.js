@@ -40,7 +40,7 @@ export default new Vuex.Store({
         linkto: '/home/datePicker'
       },
       {
-        name: '图片base46',
+        name: '图片转base46',
         linkto: '/home/upload'
       },
       {

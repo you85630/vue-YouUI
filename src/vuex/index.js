@@ -40,7 +40,7 @@ export default new Vuex.Store({
         linkto: '/home/datePicker'
       },
       {
-        name: '图片上传',
+        name: '图片base46',
         linkto: '/home/upload'
       },
       {
@@ -86,6 +86,10 @@ export default new Vuex.Store({
       {
         name: '导航菜单',
         linkto: '/home/menu'
+      },
+      {
+        name: '折叠面板',
+        linkto: '/home/collapse'
       }
     ]
   },

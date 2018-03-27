@@ -39,12 +39,14 @@ export default {
 
 <style lang="scss" scoped>
 .login {
-  position: relative;
   width: 100%;
   height: 100%;
   background: url('./../assets/img/bg.jpg') 0 0 no-repeat;
   background-size: cover;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &::after{
     position: absolute;
     top: 0;
@@ -58,9 +60,7 @@ export default {
   }
 }
 .card{
-  position: absolute;
-  top: 20vh;
-  left: 35%;
+  position: relative;
   z-index: 99999;
   box-sizing: border-box;
   padding: 40px;

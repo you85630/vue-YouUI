@@ -10,13 +10,19 @@ var notice = {
       '</span></p><p class="notice-desc" id="notice-desc">' +
       e.desc +
       '</p></div>'
+    // 点击事件
     document.getElementById('remove1').onclick = function () {
       document.getElementById('alert-notice').remove()
     }
     if (!e.desc) {
       document.getElementById('notice-desc').remove()
     }
+    // 超过时间自动消失
+    setTimeout(() => {
+      document.getElementById('alert-notice').remove()
+    }, 2000)
   },
+
   success (e) {
     let parent = document.createElement('div')
     parent.setAttribute('class', 'alert-notice')
@@ -29,12 +35,17 @@ var notice = {
       '</span></p><p class="notice-desc" id="notice-desc">' +
       e.desc +
       '</p></div>'
+    // 点击事件
     document.getElementById('remove2').onclick = function () {
       document.getElementById('alert-notice').remove()
     }
     if (!e.desc) {
       document.getElementById('notice-desc').remove()
     }
+    // 超过时间自动消失
+    setTimeout(() => {
+      document.getElementById('alert-notice').remove()
+    }, 2000)
   },
   warning (e) {
     let parent = document.createElement('div')
@@ -48,12 +59,17 @@ var notice = {
       '</span></p><p class="notice-desc" id="notice-desc">' +
       e.desc +
       '</p></div>'
+    // 点击事件
     document.getElementById('remove3').onclick = function () {
       document.getElementById('alert-notice').remove()
     }
     if (!e.desc) {
       document.getElementById('notice-desc').remove()
     }
+    // 超过时间自动消失
+    setTimeout(() => {
+      document.getElementById('alert-notice').remove()
+    }, 2000)
   },
   error (e) {
     let parent = document.createElement('div')
@@ -67,12 +83,17 @@ var notice = {
       '</span></p><p class="notice-desc" id="notice-desc">' +
       e.desc +
       '</p></div>'
+    // 点击事件
     document.getElementById('remove4').onclick = function () {
       document.getElementById('alert-notice').remove()
     }
     if (!e.desc) {
       document.getElementById('notice-desc').remove()
     }
+    // 超过时间自动消失
+    setTimeout(() => {
+      document.getElementById('alert-notice').remove()
+    }, 2000)
   }
 }
 export default notice

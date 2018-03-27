@@ -2,7 +2,7 @@
   <div class="menu">
     <div class="menu-li" v-for="(li,index) in menu" :key="li.index">
       <p @click="open(index)">
-        {{li.label}}
+        <span class="name"><i class="fa" :class="li.icon" v-if="li.icon"></i>{{li.label}}</span>
         <i class="fa" :class="li.openNow?'fa-angle-right':'fa-angle-down'"></i>
       </p>
       <div class="li-children" v-for="i in li.children" :key="i.index" v-if="li.openNow">
@@ -39,10 +39,12 @@ export default {
 <style lang="scss" scoped>
 .menu{
   overflow: hidden;
+  overflow-y: auto;
   box-sizing: border-box;
-  width: 200px;
+  width: 100%;
+  height: 100%;
   border-right: 1px solid #eee;
-  background-color: #fff;
+  background-color: #404655;
   cursor: pointer;
 
   user-select: none;
@@ -52,22 +54,24 @@ export default {
       align-items: center;
       justify-content: space-between;
       padding: 10px 20px;
+      color: #fff;
       font-size: 14px;
-       &:hover{
-        background-color: #f5f5f5;
+      .name{
+        .fa{
+          width: 20px;
+          text-align: left;
+        }
       }
     }
     .li-children{
       overflow: hidden;
+      background-color: #303646;
       a{
         display: inline-block;
         padding: 10px 40px;
         width: 100%;
+        color: #fff;
         font-size: 14px;
-        &:hover{
-          background-color: #2d8cf0;
-          color: #fff;
-        }
       }
     }
     .router-link-exact-active,

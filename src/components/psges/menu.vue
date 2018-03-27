@@ -21,6 +21,7 @@ export default {
       list: [
         {
           label: '第一级',
+          icon: 'fa-sliders',
           openNow: false,
           children: [
             {
@@ -34,6 +35,7 @@ export default {
         },
         {
           label: '第二级',
+          icon: 'fa-navicon',
           openNow: false,
           children: [
             {

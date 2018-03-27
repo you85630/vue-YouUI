@@ -28,6 +28,7 @@ export default {
   height: 5%;
   background-color: #fff;
   text-align: center;
+  box-shadow: 0 -2px 5px #eee;
   p{
     color: #999;
     font-size: 12px;

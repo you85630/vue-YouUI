@@ -1,20 +1,18 @@
 <template>
   <div class="home">
-    <top-nav></top-nav>
-    <div class="main">
-      <div class="left">
-        <left-nav></left-nav>
+    <div class="left">
+      <left-nav></left-nav>
+    </div>
+    <div class="right">
+      <top-nav></top-nav>
+      <div class="right-main">
+        <transition name="slide-fade" mode="out-in">
+          <keep-alive>
+            <router-view></router-view>
+          </keep-alive>
+        </transition>
       </div>
-      <div class="right">
-        <div class="right-main">
-          <transition name="slide-fade" mode="out-in">
-            <keep-alive>
-              <router-view></router-view>
-            </keep-alive>
-          </transition>
-        </div>
-        <my-footer></my-footer>
-      </div>
+      <my-footer></my-footer>
     </div>
   </div>
 </template>
@@ -33,13 +31,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home{
-  height: 100%;
-}
-.main {
+.home {
   display: flex;
   overflow: hidden;
-  height: 95%;
+  height: 100%;
   .left{
     max-width: 300px;
     width: 20%;
@@ -52,7 +47,7 @@ export default {
       box-sizing: border-box;
       margin: 10px;
       padding: 10px;
-      height: 93%;
+      height: 87.5%;
       background-color: #fff;
     }
   }

@@ -26,11 +26,13 @@ export default {
   justify-content: space-between;
   padding: 0 20px;
   height: 5%;
-  background-color: #3C3C3C;
-  color: #fff;
+  background-color: #fff;
+  box-shadow: 0 2px 5px #ccc;
+  a{
+    color: #383E4B;
+  }
   .logo{
     a{
-      color: #fff;
       font-size: 26px;
     }
   }
@@ -39,16 +41,13 @@ export default {
     li{
       margin-right: 10px;
       padding-right: 10px;
-      border-right: 1px solid #fff;
+      border-right: 1px solid #383E4B;
       font-size: 14px;
       cursor: pointer;
       &:last-child{
         margin-right: 0;
         padding-right: 0;
         border: none;
-      }
-      a{
-        color: #fff;
       }
     }
   }

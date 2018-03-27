@@ -23,7 +23,7 @@ export default {
 .left-nav{
   overflow-y: auto;
   height: 100%;
-  background-color: #2d8cf0;
+  background-color: #383E4B;
   ul{
     li{
       user-select: none;

@@ -1,5 +1,7 @@
 <template>
-  <div class="slider" @click="slider"><p :style="now"><em @mousemove="hover"></em></p></div>
+  <div>
+    <div class="slider" @click="slider"><p :style="now"><em @mousemove="move" @mousedown="start"></em></p></div>
+  </div>
 </template>
 
 <script>
@@ -9,7 +11,8 @@ export default {
     return {
       now: {
         width: this.value + '%'
-      }
+      },
+      ifBool: false
     }
   },
   methods: {
@@ -21,13 +24,24 @@ export default {
       this.now.width = here + '%'
       this.$emit('input', here)
     },
-    hover (el) {
-      let wid = this.$el.scrollWidth
-      let disX = el.clientX - this.$el.offsetLeft
-      let offLeft = disX / wid
-      let here = (offLeft * 100).toFixed(2)
-      this.now.width = here + '%'
-      this.$emit('input', here)
+    start () {
+      this.ifBool = true
+    },
+    end () {
+      this.ifBool = false
+    },
+    move (el) {
+      if (this.ifBool) {
+        let wid = this.$el.scrollWidth
+        let disX = el.clientX - this.$el.offsetLeft
+        let offLeft = disX / wid
+        let here = (offLeft * 100).toFixed(2)
+        this.now.width = here + '%'
+        this.$emit('input', here)
+      }
+    },
+    mounted () {
+      window.addEventListener('mouseup', this.end())
     }
   }
 }

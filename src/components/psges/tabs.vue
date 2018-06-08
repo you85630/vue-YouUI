@@ -2,7 +2,7 @@
   <div>
     <my-tabs v-model="num" :list="tabsList"></my-tabs>
 
-    <my-tips :list="tableList"></my-tips>
+    <my-tips :value="tableList"></my-tips>
   </div>
 </template>
 

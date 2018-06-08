@@ -3,7 +3,7 @@
     <my-slider v-model="pwidth"></my-slider>
     <p>{{pwidth}}</p>
 
-    <my-tips :list="tableList"></my-tips>
+    <my-tips :value="tableList"></my-tips>
   </div>
 </template>
 

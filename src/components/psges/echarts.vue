@@ -15,7 +15,7 @@
       </li>
     </ul>
 
-      <my-tips :list="tableList"></my-tips>
+      <my-tips :value="tableList"></my-tips>
   </div>
 </template>
 

@@ -5,7 +5,7 @@
     <my-button type="warning" @click="warning">警告</my-button>
     <my-button type="error" @click="error">错误</my-button>
 
-    <my-tips :list="tableList"></my-tips>
+    <my-tips :value="tableList"></my-tips>
     <ul>
       <li><h3>通过直接调用以下方法来使用组件</h3></li>
       <li><code>this.$notice.primary(config)</code></li>

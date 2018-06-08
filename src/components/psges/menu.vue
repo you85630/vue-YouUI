@@ -2,7 +2,7 @@
   <div>
     <my-menu :menu="list"></my-menu>
 
-    <my-tips :list="tableList"></my-tips>
+    <my-tips :value="tableList"></my-tips>
     <p>根据路由判断当前展开的父元素</p>
     <p style="color:red">注：当前页面为静态资源</p>
   </div>

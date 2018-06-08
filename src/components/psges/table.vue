@@ -8,7 +8,7 @@
         </div>
       </template>
     </my-table>
-    <my-tips :list="mytips"></my-tips>
+    <my-tips :value="mytips"></my-tips>
   </div>
 </template>
 

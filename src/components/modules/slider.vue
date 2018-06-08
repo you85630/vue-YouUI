@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <div class="slider" @click="slider"><p :style="now"><em @mousemove="move" @mousedown="start"></em></p></div>
-  </div>
+  <div class="slider" @click="slider"><p :style="now"><em @mousedown="start"></em></p></div>
 </template>
 
 <script>
@@ -20,7 +18,7 @@ export default {
       let wid = this.$el.scrollWidth
       let disX = el.clientX - this.$el.offsetLeft
       let offLeft = disX / wid
-      let here = (offLeft * 100).toFixed(2)
+      let here = (offLeft * 100).toFixed()
       this.now.width = here + '%'
       this.$emit('input', here)
     },
@@ -35,14 +33,20 @@ export default {
         let wid = this.$el.scrollWidth
         let disX = el.clientX - this.$el.offsetLeft
         let offLeft = disX / wid
-        let here = (offLeft * 100).toFixed(2)
+        let here = (offLeft * 100).toFixed()
+        if (here < 0) {
+          here = 0
+        } else if (here > 100) {
+          here = 100
+        }
         this.now.width = here + '%'
         this.$emit('input', here)
       }
-    },
-    mounted () {
-      window.addEventListener('mouseup', this.end())
     }
+  },
+  mounted () {
+    window.addEventListener('mouseup', this.end)
+    window.addEventListener('mousemove', this.move)
   }
 }
 </script>

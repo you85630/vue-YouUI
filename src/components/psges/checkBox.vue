@@ -3,7 +3,7 @@
     <check-box v-model="select" v-for="li in checkList" :key="li.index">{{li.name}}</check-box>
     <p>{{select}}</p>
 
-    <my-tips :list="tableList"></my-tips>
+    <my-tips :value="tableList"></my-tips>
   </div>
 </template>
 

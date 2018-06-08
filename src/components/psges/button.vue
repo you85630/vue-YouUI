@@ -28,7 +28,7 @@
       <p>长按钮</p>
       <my-button type="primary" :long="true">主要按钮</my-button>
     </div>
-    <my-tips :list="tableList"></my-tips>
+    <my-tips :value="tableList"></my-tips>
   </div>
 </template>
 

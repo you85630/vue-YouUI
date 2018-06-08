@@ -3,7 +3,7 @@
     <date-picker v-model="time"></date-picker>
     <p>{{time}}</p>
 
-    <my-tips :list="tableList"></my-tips>
+    <my-tips :value="tableList"></my-tips>
   </div>
 </template>
 

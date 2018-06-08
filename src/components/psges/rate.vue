@@ -3,7 +3,7 @@
     <my-rate v-model="star"></my-rate>
     <p>{{star}}</p>
 
-    <my-tips :list="tableList"></my-tips>
+    <my-tips :value="tableList"></my-tips>
   </div>
 </template>
 

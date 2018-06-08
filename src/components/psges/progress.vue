@@ -3,7 +3,7 @@
     <my-progress v-model="pwidth"></my-progress>
     <p>{{pwidth}}</p>
 
-    <my-tips :list="tableList"></my-tips>
+    <my-tips :value="tableList"></my-tips>
   </div>
 </template>
 

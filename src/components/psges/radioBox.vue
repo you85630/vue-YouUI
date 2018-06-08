@@ -2,7 +2,7 @@
   <div>
     <radio-box v-model="select" :list="radioList"></radio-box>
     <p>{{select}}</p>
-    <my-tips :list="tableList"></my-tips>
+    <my-tips :value="tableList"></my-tips>
   </div>
 </template>
 

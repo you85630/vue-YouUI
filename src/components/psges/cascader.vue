@@ -2,7 +2,8 @@
   <div class="casc" v-if="status">
     <my-cascader v-model="select" :list='selectList'></my-cascader>
     <my-button type="primary" @click="refresh">重置</my-button>
-    <my-tips :list="tableList"></my-tips>
+
+    <my-tips :value="tableList"></my-tips>
   </div>
 </template>
 

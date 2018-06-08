@@ -1,7 +1,7 @@
 <template>
   <div class="tips">
     <p class="title">组件说明：</p>
-    <my-table :headline="tableTitle" :tableData="list"></my-table>
+    <my-table :headline="tableTitle" :tableData="value"></my-table>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import myTable from 'components/modules/table'
 import myButton from 'components/modules/button'
 
 export default {
-  props: ['list'],
+  props: ['value'],
   components: {
     myTable,
     myButton

@@ -3,7 +3,7 @@
     <up-load v-model="pic"></up-load>
     <textarea :value="pic"></textarea>
 
-    <my-tips :list="tableList"></my-tips>
+    <my-tips :value="tableList"></my-tips>
   </div>
 </template>
 

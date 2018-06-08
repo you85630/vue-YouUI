@@ -1,24 +1,18 @@
 <template>
-  <div>
-    <my-select v-model="select" :list="selectList"></my-select>
-    <p>选中：{{select}}</p>
-    <my-tips :value="tableList"></my-tips>
-  </div>
+<div>
+   <my-tips :value="tableList"></my-tips>
+</div>
 </template>
 
 <script>
-import mySelect from 'components/modules/select'
 import myTips from 'components/common/tips'
 
 export default {
   components: {
-    mySelect,
     myTips
   },
   data () {
     return {
-      select: '',
-      selectList: ['111', '222', '333'],
       tableList: [
         {
           name: 'value',
@@ -33,9 +27,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p{
-  font-size: 12px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
+
 </style>

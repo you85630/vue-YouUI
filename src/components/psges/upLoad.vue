@@ -1,6 +1,6 @@
 <template>
   <div>
-    <up-load v-model="pic"></up-load>
+    <up-load v-model="pic" :mold="type"></up-load>
     <textarea :value="pic"></textarea>
 
     <my-tips :value="tableList"></my-tips>
@@ -19,6 +19,7 @@ export default {
   data () {
     return {
       pic: '',
+      type: 'img',
       tableList: [
         {
           name: 'value',

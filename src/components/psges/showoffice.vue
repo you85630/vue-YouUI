@@ -1,15 +1,18 @@
 <template>
 <div>
-   <my-tips :value="tableList"></my-tips>
+  <show-office></show-office>
+   <!-- <my-tips :value="tableList"></my-tips> -->
 </div>
 </template>
 
 <script>
+import showOffice from 'components/modules/showOffice'
 import myTips from 'components/common/tips'
 
 export default {
   components: {
-    myTips
+    myTips,
+    showOffice
   },
   data () {
     return {
@@ -27,5 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.tips{
+  margin-top: 20px;
+}
 </style>

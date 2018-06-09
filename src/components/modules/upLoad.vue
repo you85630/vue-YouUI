@@ -77,7 +77,6 @@ export default {
         let reader = new FileReader()
         if (typeof FileReader !== 'undefined') {
           reader.onload = function () {
-            // 传输的内容需要时地址
             data(reader.result)
           }
           reader.readAsBinaryString(val.files[0])

@@ -27,7 +27,7 @@ const card = () => import('components/psges/card')
 const notice = () => import('components/psges/notice')
 const menu = () => import('components/psges/menu')
 const collapse = () => import('components/psges/collapse')
-const showoffice = () => import('components/psges/showoffice')
+const showpdf = () => import('components/psges/showpdf')
 
 const router = new Router({
   routes: [
@@ -156,9 +156,9 @@ const router = new Router({
           component: collapse
         },
         {
-          path: '/home/showoffice',
-          name: 'showoffice',
-          component: showoffice
+          path: '/home/showpdf',
+          name: 'showpdf',
+          component: showpdf
         }
       ]
     }

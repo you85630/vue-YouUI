@@ -4,7 +4,7 @@
     <div class="input-box"><input type="text" placeholder="请输入url地址,内容不可为函中文" v-model="value"></div>
 
     <div class="title">展示</div>
-    <div class="show" v-if="urlData">
+    <div class="show" v-if="value">
       <iframe :src="urlData"></iframe>
     </div>
   </div>

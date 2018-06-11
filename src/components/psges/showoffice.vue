@@ -17,6 +17,7 @@ export default {
   },
   data () {
     return {
+      // showData: 'http://psylife-static.oss-cn-hangzhou.aliyuncs.com/sit/download/123.doc',
       showData: 'http%3a%2f%2fvideo.ch9.ms%2fbuild%2f2011%2fslides%2fTOOL-532T_Sutter.pptx',
       tableList: [
         {

@@ -17,8 +17,7 @@ export default {
   },
   data () {
     return {
-      type: 'excel',
-      showData: 'http://view.officeapps.live.com/op/view.aspx?src=http%3a%2f%2fvideo.ch9.ms%2fbuild%2f2011%2fslides%2fTOOL-532T_Sutter.pptx',
+      showData: 'http%3a%2f%2fvideo.ch9.ms%2fbuild%2f2011%2fslides%2fTOOL-532T_Sutter.pptx',
       tableList: [
         {
           name: 'value',

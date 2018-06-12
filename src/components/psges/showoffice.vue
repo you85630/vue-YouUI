@@ -2,6 +2,7 @@
 <div>
   <show-office :value="showData"></show-office>
 
+  <p>当前页面的请求必须是https，否则会被视为不安全请求，予以阻止</p>
    <my-tips :value="tableList"></my-tips>
 </div>
 </template>
@@ -35,5 +36,10 @@ export default {
 <style lang="scss" scoped>
 .tips{
   margin-top: 20px;
+}
+p{
+  margin-top: 20px;
+  font-size: 20px;
+  color: #f00;
 }
 </style>

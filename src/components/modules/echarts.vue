@@ -147,7 +147,13 @@ export default {
       if (types === 'radar') {
         option = this.data.radar
       }
-      this.$echarts.init(document.getElementById(this.echartsId)).setOption(option)
+      let myChart = this.$echarts.init(document.getElementById(this.echartsId))
+      window.addEventListener('resize', function () {
+        setTimeout(function () {
+          myChart.resize()
+        }, 500)
+      })
+      myChart.setOption(option)
     }
   }
 }

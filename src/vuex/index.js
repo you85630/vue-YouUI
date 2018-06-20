@@ -90,10 +90,6 @@ export default new Vuex.Store({
       {
         name: '折叠面板',
         linkto: '/home/collapse'
-      },
-      {
-        name: '预览office',
-        linkto: '/home/showoffice'
       }
     ]
   },

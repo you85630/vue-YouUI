@@ -135,17 +135,21 @@ export default {
   methods: {
     colours (types) {
       let option
-      if (types === 'line') {
-        option = this.data.line
-      }
-      if (types === 'bar') {
-        option = this.data.bar
-      }
-      if (types === 'pie') {
-        option = this.data.pie
-      }
-      if (types === 'radar') {
-        option = this.data.radar
+      switch (types) {
+        case 'line':
+          option = this.data.line
+          break
+        case 'bar':
+          option = this.data.bar
+          break
+        case 'pie':
+          option = this.data.pie
+          break
+        case 'radar':
+          option = this.data.radar
+          break
+        default:
+          break
       }
       let myChart = this.$echarts.init(document.getElementById(this.echartsId))
       window.addEventListener('resize', function () {

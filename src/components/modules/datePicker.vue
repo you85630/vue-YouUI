@@ -1,9 +1,9 @@
 <template>
   <div class="date-picker">
     <div class="date-show">
-      <i class="fa fa-calendar"></i><input type="text" v-model="timeShow" @click="showTimeCard">
+      <i class="fa fa-calendar"></i><input type="text" v-model="timeShow" @click="showTimeCard" placeholder="请选择日期">
     </div>
-    <div class="date-card" v-if="timeCard">
+    <div class="date-card" v-if="timeCard" @mouseleave="hideBox">
       <div class="day-show" v-if="day">
         <div class="day-title">
           <button @click="getPrevYear">
@@ -171,6 +171,10 @@ export default {
         first: this.screenYear.first + 10,
         last: this.screenYear.last + 10
       }
+    },
+    // 失去焦点隐藏
+    hideBox () {
+      this.timeCard = false
     }
   },
   created () {
@@ -290,19 +294,23 @@ export default {
 <style lang="scss" scoped>
 .date-picker {
   position: relative;
+  width: 104px;
 }
 .date-show {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   box-sizing: border-box;
-  padding: 1% 2%;
+  padding: 4px 10px;
   border: 1px solid #eee;
   border-radius: 2px;
   input {
-    margin-left: 10px;
     width: 96%;
     border: none;
-    font-size: 14px;
+    font-size: 12px;
   }
   i {
+    margin-right: 10px;
     font-size: 12px;
   }
 }
@@ -320,7 +328,7 @@ export default {
   &:before,
   &:after {
     position: absolute;
-    left: 160px;
+    left: 20px;
     width: 0;
     height: 0;
     border-width: 0 12px 8px 12px;
@@ -338,6 +346,10 @@ export default {
 }
 .day-show {
   .day-title {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
     padding-bottom: 10px;
     text-align: center;
     button,
@@ -357,7 +369,6 @@ export default {
       margin: 0 11px;
     }
     p {
-      padding: 0 32px;
       span {
         display: inline-block;
         width: 60px;

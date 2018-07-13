@@ -153,9 +153,7 @@ export default {
       }
       let myChart = this.$echarts.init(document.getElementById(this.echartsId))
       window.addEventListener('resize', function () {
-        setTimeout(function () {
-          myChart.resize()
-        }, 500)
+        myChart.resize()
       })
       myChart.setOption(option)
     }

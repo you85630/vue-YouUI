@@ -1,6 +1,6 @@
 <template>
   <div>
-    <check-box v-model="select" v-for="li in checkList" :key="li.index">{{li.name}}</check-box>
+    <check-box v-model="select" :list="checkList"></check-box>
     <p>{{select}}</p>
 
     <my-tips :value="tableList"></my-tips>
@@ -20,9 +20,15 @@ export default {
     return {
       select: [],
       checkList: [
-        {name: '备选1'
-        }, {name: '备选2'
-        }, {name: '备选3'
+        {
+          name: '备选1',
+          select: false
+        }, {
+          name: '备选2',
+          select: false
+        }, {
+          name: '备选3',
+          select: false
         }
       ],
       tableList: [

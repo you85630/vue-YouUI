@@ -1,38 +1,29 @@
 <template>
   <div class="check-box">
-    <p @click="checked" :class="{active:select}">
-      <i class="fa" :class="select?'fa-check-square':'fa-square-o'"></i>
-      <slot></slot>
+    <p v-for="(li,index) in list" :key="index" @click="checked(li)" :class="{active:li.select}">
+      <i class="fa" :class="li.select?'fa-check-square':'fa-square-o'"></i>{{li.name}}
     </p>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['value'],
-  data () {
-    return {
-      select: false,
-      list: this.value
-    }
-  },
+  props: ['value', 'list'],
   methods: {
-    checked () {
-      this.select = !this.select
-      let text = this.$slots.default[0].text
-      if (this.select) {
-        this.list.push(text)
-      } else {
-        let now = this.list
-        let Inx
-        now.filter((e, key) => {
-          if (e === text) {
-            Inx = key
+    checked (key) {
+      let list = this.list
+      let now = []
+      key.select = !key.select
+      for (const key in list) {
+        if (list.hasOwnProperty(key)) {
+          const element = list[key]
+          if (element.select) {
+            now.push(element)
+            now = [...new Set(now)]
           }
-        })
-        now.splice(Inx, 1)
+        }
       }
-      this.$emit('input', this.list)
+      this.$emit('input', now)
     }
   }
 }
@@ -40,15 +31,16 @@ export default {
 
 <style lang="scss" scoped>
 .check-box{
-    display: inline-block;
-    margin-left: 20px;
-    vertical-align: middle;
-    font-size: 14px;
-    cursor: pointer;
-
-    user-select: none;
-    &:first-child{
-      margin-left: 0;
+    display: flex;
+    align-items: center;
+    p{
+      cursor: pointer;
+      user-select: none;
+      font-size: 14px;
+      margin-right: 10px;
+      .fa{
+        margin-right: 4px;
+      }
     }
 }
 .active {

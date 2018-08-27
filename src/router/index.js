@@ -10,6 +10,7 @@ const index = () => import('components/psges/index')
 const Switch = () => import('components/psges/switch')
 const button = () => import('components/psges/button')
 const datePicker = () => import('components/psges/datePicker')
+const timepicker = () => import('components/psges/timepicker')
 const upLoad = () => import('components/psges/upLoad')
 const radioBox = () => import('components/psges/radioBox')
 const checkBox = () => import('components/psges/checkBox')
@@ -27,7 +28,6 @@ const card = () => import('components/psges/card')
 const notice = () => import('components/psges/notice')
 const menu = () => import('components/psges/menu')
 const collapse = () => import('components/psges/collapse')
-const timepicker = () => import('components/psges/timepicker')
 
 const router = new Router({
   routes: [
@@ -69,6 +69,11 @@ const router = new Router({
           path: '/home/datePicker',
           name: 'datePicker',
           component: datePicker
+        },
+        {
+          path: '/home/timepicker',
+          name: 'timepicker',
+          component: timepicker
         },
         {
           path: '/home/upLoad',
@@ -154,11 +159,6 @@ const router = new Router({
           path: '/home/collapse',
           name: 'collapse',
           component: collapse
-        },
-        {
-          path: '/home/timepicker',
-          name: 'timepicker',
-          component: timepicker
         }
       ]
     }

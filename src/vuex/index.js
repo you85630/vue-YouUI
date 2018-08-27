@@ -40,6 +40,10 @@ export default new Vuex.Store({
         linkto: '/home/datePicker'
       },
       {
+        name: '时间选择器',
+        linkto: '/home/timepicker'
+      },
+      {
         name: '图片转base46',
         linkto: '/home/upload'
       },
@@ -90,10 +94,6 @@ export default new Vuex.Store({
       {
         name: '折叠面板',
         linkto: '/home/collapse'
-      },
-      {
-        name: '时间选择器',
-        linkto: '/home/timepicker'
       }
     ]
   },

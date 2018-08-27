@@ -90,6 +90,10 @@ export default new Vuex.Store({
       {
         name: '折叠面板',
         linkto: '/home/collapse'
+      },
+      {
+        name: '时间选择器',
+        linkto: '/home/timepicker'
       }
     ]
   },
